@@ -41,6 +41,14 @@ class BJ_State
         @bet = 0
     end
 
+    def self.dealer_cards()
+        return @dealer_cards
+    end
+
+    def self.player_cards()
+        return @player_cards
+    end
+
     def self.dealer_total()
         score = 0
         @dealer_cards.each {|item|
