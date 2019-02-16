@@ -6,7 +6,7 @@ bj_play_game = -> {
             return nil
         end
         BJ_State.play_game()
-        BJ_View.main_game_display()
+        BJ_View.make_bet_display()
         puts"bet < $$$$ >                      rules stop"
     end
 
