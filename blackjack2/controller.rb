@@ -5,6 +5,7 @@ class Blackjack_Controller
         while(!BJ_State.exited?())
             BJ_View.get_emit_input()
         end
+        BJ_State.exit_false();
     end
 
     def new
