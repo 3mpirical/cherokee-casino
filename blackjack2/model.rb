@@ -61,4 +61,12 @@ class BJ_Model
         @player_money += val
     end
 
+    def self.player_score
+        return @player_score
+    end
+
+    def self.dealer_score
+        return @dealer_score
+    end
+
 end
