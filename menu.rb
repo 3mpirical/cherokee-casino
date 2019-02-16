@@ -1,4 +1,3 @@
-# Dir["/blackjack2/*.rb"].each {|file| require file }
 require("./blackjack2/controller")
 require("./blackjack2/model")
 require("./blackjack2/view")
@@ -108,8 +107,6 @@ class Controller
 
 end
 ctrl = Controller.new(mdl, view)
-
-# view.display_initial_prompt()
 
 ### Execute ###
 
