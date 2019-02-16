@@ -65,6 +65,7 @@ class View
     end
 
 end
+
 view = View.new(mdl)
 
 class Controller
@@ -89,10 +90,12 @@ class Controller
                 if input == "Chance".downcase
                     @mdl.set_game("chance")
                     puts "Starting: #{@mdl.current_game}"
-                else input == "BlackJack".downcase
+                elsif input == "BlackJack".downcase
                     @mdl.set_game("blackjack")
                     puts "Starting: #{@mdl.current_game}"
                     Blackjack_Controller.init()
+                else
+                    puts "Invalid Selection"
                 end
             when("exit")
                 @mdl.exits = true
