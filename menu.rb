@@ -1,3 +1,21 @@
+# Dir["/blackjack2/*.rb"].each {|file| require file }
+require("./blackjack2/controller")
+require("./blackjack2/model")
+require("./blackjack2/view")
+require("./blackjack2/state")
+require("./blackjack2/event_emitter/game_emitter")
+BJ_Emitter.init_routes("./blackjack2/event_emitter/routes/_exit")
+BJ_Emitter.init_routes("./blackjack2/event_emitter/routes/_menu")
+BJ_Emitter.init_routes("./blackjack2/event_emitter/routes/_play")
+BJ_Emitter.init_routes("./blackjack2/event_emitter/routes/_stop")
+BJ_Emitter.init_routes("./blackjack2/event_emitter/routes/_bet")
+BJ_Emitter.init_routes("./blackjack2/event_emitter/routes/_hit")
+BJ_Emitter.init_routes("./blackjack2/event_emitter/routes/_stand")
+BJ_Emitter.init_routes("./blackjack2/event_emitter/routes/_rules")
+BJ_Emitter.init_routes("./blackjack2/event_emitter/routes/_default")
+
+require "pry"
+
 class Model  
     attr_accessor(:wallet, :exits) #you can call wallet to later add or subtract values
     attr_reader(:current_game)
@@ -75,6 +93,7 @@ class Controller
                 else input == "BlackJack".downcase
                     @mdl.set_game("blackjack")
                     puts "Starting: #{@mdl.current_game}"
+                    Blackjack_Controller.init()
                 end
             when("exit")
                 @mdl.exits = true
