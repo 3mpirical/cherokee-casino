@@ -17,6 +17,8 @@ class BJ_State
         @exit = false
     end
 
+
+
     def self.play_game
         @playing = true
     end
@@ -28,6 +30,8 @@ class BJ_State
     def self.is_playing?
         return @playing
     end
+
+
 
     def self.make_bet(money)
         @bet = money
@@ -41,6 +45,8 @@ class BJ_State
         @bet = 0
     end
 
+
+
     def self.dealer_cards()
         return @dealer_cards
     end
@@ -49,8 +55,19 @@ class BJ_State
         return @player_cards
     end
 
+    def self.add_dealer_card(card)
+        @dealer_cards.push(card)
+    end
+
+    def self.add_player_card(card)
+        @player_cards.push(card)
+    end
+
+
+
     def self.dealer_total()
         score = 0
+        p @dealer_cardsgames
         @dealer_cards.each {|item|
             score += item.value
         }
