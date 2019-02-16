@@ -31,12 +31,12 @@ class BJ_View
     end
 
     def self.card_display(array)
-        displays = {
-            1 => " ____   ____\n|#{array[0]}   | ||||||\n| <> | ||()||\n|___#{array[0]}| ||||||",
-            2 => " ____   ____\n|#{array[0]}   | |#{array[1]}   |\n| <> | | <> |\n|___#{array[0]}| |___#{array[1]}|"  
-        }
-        cards = array.length
-        puts displays[cards]
+        case(array.length)
+        when(1)
+            puts " ____   ____\n|#{array[0].icon}   | ||||||\n| <> | ||()||\n|___#{array[0].icon}| ||||||"
+        when(2)
+            puts " ____   ____\n|#{array[0].icon}   | |#{array[1].icon}   |\n| <> | | <> |\n|___#{array[0].icon}| |___#{array[1].icon}|"
+        end
     end
 
     def self.main_game_display
@@ -47,7 +47,7 @@ class BJ_View
         puts ""
         puts "                 $$$ #{BJ_State.get_bet()} $$$"
         puts ""
-        BJ_View.card_display(BJ_State.dealer_cards())
+        BJ_View.card_display(BJ_State.player_cards())
         puts ""
         puts ":*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*::*:*:*:*:*:"
         puts "User           Total: #{BJ_State.player_total()}               $#{BJ_Model.get_player_money()}"
