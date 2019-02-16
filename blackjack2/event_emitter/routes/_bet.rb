@@ -6,7 +6,7 @@ bj_bet = -> {
                 return nil
             end
 
-            print "$$$: "
+            print "(Cash $#{BJ_Model.get_player_money()}): "
             bet = gets.strip().to_i
 
             if(bet <= 0)
