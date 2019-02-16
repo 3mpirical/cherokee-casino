@@ -36,7 +36,7 @@ class BJ_View
         puts ":*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*::*:*:*:*:*:"
         BJ_View.one_card_down("Q")
         puts ""
-        puts "                                 "
+        puts "                 $$$ #{BJ_State.get_bet()} $$$           "
         puts ""
         BJ_View.two_cards_up("2","K")
         puts ""
