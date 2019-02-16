@@ -2,3 +2,12 @@
 
 
 ===== MAIN FEATURES =====
+
+Welcome to the Casino 
+enter your name - input
+your starting bank is
+math.random
+
+
+menu -  games, settings
+games menu
