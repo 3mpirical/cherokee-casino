@@ -30,21 +30,46 @@ class BJ_View
         puts " ____   ____\n|#{c1}   | |#{c2}   |\n| <> | | <> |\n|___#{c1}| |___#{c2}|"
     end
 
+    def self.card_display(array)
+        displays = {
+            1 => " ____   ____\n|#{array[0]}   | ||||||\n| <> | ||()||\n|___#{array[0]}| ||||||",
+            2 => " ____   ____\n|#{array[0]}   | |#{array[1]}   |\n| <> | | <> |\n|___#{array[0]}| |___#{array[1]}|"  
+        }
+        cards = array.length
+        puts displays[cards]
+    end
+
     def self.main_game_display
         puts "============================================"
         puts "Dealer         Total: #{BJ_State.dealer_total()}"
         puts ":*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*::*:*:*:*:*:"
-        BJ_View.one_card_down("Q")
+        BJ_View.card_display(BJ_State.dealer_cards())
         puts ""
         puts "                 $$$ #{BJ_State.get_bet()} $$$"
         puts ""
-        BJ_View.two_cards_up("2","K")
+        BJ_View.card_display(BJ_State.dealer_cards())
         puts ""
         puts ":*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*::*:*:*:*:*:"
         puts "User           Total: #{BJ_State.player_total()}               $#{BJ_Model.get_player_money()}"
         puts "============================================"
         puts "hit / stand                       rules stop"
     end
+
+    # def self.main_game_display
+    #     puts "============================================"
+    #     puts "Dealer         Total: #{BJ_State.dealer_total()}"
+    #     puts ":*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*::*:*:*:*:*:"
+    #     BJ_View.one_card_down("Q")
+    #     puts ""
+    #     puts "                 $$$ #{BJ_State.get_bet()} $$$"
+    #     puts ""
+    #     BJ_View.two_cards_up("2","K")
+    #     puts ""
+    #     puts ":*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*::*:*:*:*:*:"
+    #     puts "User           Total: #{BJ_State.player_total()}               $#{BJ_Model.get_player_money()}"
+    #     puts "============================================"
+    #     puts "hit / stand                       rules stop"
+    # end
 
     def self.make_bet_display
         puts "============================================"
