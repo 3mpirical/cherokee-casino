@@ -16,6 +16,11 @@ bj_bet = -> {
             else
                 BJ_State.make_bet(bet)
                 BJ_Model.sub_player_money(bet)
+
+                BJ_State.add_dealer_card(BJ_Model.remove_card())
+                BJ_State.add_player_card(BJ_Model.remove_card())
+                BJ_State.add_player_card(BJ_Model.remove_card())
+
                 BJ_View.main_game_display()
             end
         end
