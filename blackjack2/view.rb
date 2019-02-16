@@ -32,7 +32,7 @@ class BJ_View
 
     def self.main_game_display
         puts "============================================"
-        puts "Dealer         score: #{BJ_State.dealer_score()}"
+        puts "Dealer         Total: #{BJ_State.dealer_total()}"
         puts ":*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*::*:*:*:*:*:"
         BJ_View.one_card_down("Q")
         puts ""
@@ -41,14 +41,14 @@ class BJ_View
         BJ_View.two_cards_up("2","K")
         puts ""
         puts ":*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*::*:*:*:*:*:"
-        puts "User           score: #{BJ_State.player_score()}               $#{BJ_Model.get_player_money()}"
+        puts "User           Total: #{BJ_State.player_total()}               $#{BJ_Model.get_player_money()}"
         puts "============================================"
         puts "hit / stand                       rules stop"
     end
 
     def self.make_bet_display
         puts "============================================"
-        puts "Dealer         score: #{BJ_State.dealer_score()}"
+        puts "Dealer         score: #{BJ_Model.dealer_score()}"
         puts ":*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*::*:*:*:*:*:"
         puts ""
         puts "      $$$$$   $                          $  "
@@ -64,7 +64,7 @@ class BJ_View
         puts "      $  $$___$     $____     $    $        "
         puts ""
         puts ":*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*::*:*:*:*:*:"
-        puts "User           score: #{BJ_State.player_score()}               $#{BJ_Model.get_player_money()}"
+        puts "User           score: #{BJ_Model.player_score()}               $#{BJ_Model.get_player_money()}"
         puts "============================================"
         puts "bet                               rules stop"
     end
