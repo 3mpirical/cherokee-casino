@@ -1,7 +1,8 @@
 bj_bet = -> {
         ##### ABSTRACTED FUNCS #####
         def handle_bet
-            if(!BJ_State.is_playing?())
+            p BJ_State.get_bet()
+            if(!BJ_State.is_playing?() || BJ_State.get_bet() != 0)
                 puts"\n:*:*:*: You Aren't Quite There Yet :*:*:*:"
                 return nil
             end
