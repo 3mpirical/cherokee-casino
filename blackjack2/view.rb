@@ -43,6 +43,7 @@ class BJ_View
         puts ":*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*::*:*:*:*:*:"
         puts "User           score: #{BJ_State.player_score()}               $ --- "
         puts "============================================"
+        puts "hit / stand                       rules stop"
     end
 
     def self.make_bet_display
@@ -65,6 +66,7 @@ class BJ_View
         puts ":*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*::*:*:*:*:*:"
         puts "User           score: #{BJ_State.player_score()}               $ --- "
         puts "============================================"
+        puts "bet                               rules stop"
     end
 
     def self.get_emit_input()

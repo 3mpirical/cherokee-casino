@@ -7,7 +7,6 @@ bj_play_game = -> {
         end
         BJ_State.play_game()
         BJ_View.make_bet_display()
-        puts"bet < $$$$ >                      rules stop"
     end
 
     ##### EVENT LISTENERS #####

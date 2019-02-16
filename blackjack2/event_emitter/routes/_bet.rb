@@ -1,7 +1,6 @@
 bj_bet = -> {
         ##### ABSTRACTED FUNCS #####
         def handle_bet
-            p BJ_State.get_bet()
             if(!BJ_State.is_playing?() || BJ_State.get_bet() != 0)
                 puts"\n:*:*:*: You Aren't Quite There Yet :*:*:*:"
                 return nil
@@ -18,7 +17,6 @@ bj_bet = -> {
                 BJ_State.make_bet(bet)
                 BJ_Model.sub_player_money(bet)
                 BJ_View.main_game_display()
-                puts"hit / stand                       rules stop"
             end
         end
 
