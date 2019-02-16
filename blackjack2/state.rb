@@ -13,6 +13,10 @@ class BJ_State
         @exit = true
     end
 
+    def self.exit_false
+        @exit = false
+    end
+
     def self.play_game
         @playing = true
     end
