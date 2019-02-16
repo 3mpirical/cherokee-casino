@@ -1,5 +1,6 @@
 module Cards
     class Card
+        attr_accessor(:icon, :value)
         def initialize(icon, value)
             @icon = icon
             @value = value
@@ -31,10 +32,11 @@ class BJ_Model
         Card.new("J", 10),
         Card.new("A", 11),
     ]
-    
+
     ### Getters/Setters/Etc ###
 
     def self.reset_deck
+        @deck_arr = []
         @card_types.each() {|item|
             @deck_arr.push(item, item, item, item)
         }
@@ -49,6 +51,8 @@ class BJ_Model
         return @deck_arr.lengh        
     end
     
+
+
     def self.get_player_money
         return @player_money
     end
@@ -61,6 +65,8 @@ class BJ_Model
         @player_money += val
     end
 
+    
+
     def self.player_score
         return @player_score
     end
@@ -70,3 +76,5 @@ class BJ_Model
     end
 
 end
+
+BJ_Model.reset_deck()
