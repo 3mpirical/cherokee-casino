@@ -75,6 +75,14 @@ class BJ_Model
         return @dealer_score
     end
 
+    def self.inc_player_score
+        @player_score += 1
+    end
+
+    def self.inc_dealer_score
+        @dealer_score += 1
+    end
+
 end
 
 BJ_Model.reset_deck()
