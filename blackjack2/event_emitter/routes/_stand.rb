@@ -3,6 +3,7 @@ bj_stand = -> {
     def reset_game_state
         BJ_State.reset_bet()
         BJ_State.reset_cards()
+        BJ_State.reset_aces()
         BJ_State.reset_totals()
         BJ_Model.reset_deck()
         sleep(5)
@@ -14,7 +15,6 @@ bj_stand = -> {
         BJ_State.add_dealer_card(card)
         BJ_State.add_dealer_total(card.value)
         BJ_State.inc_dealer_aces() if(card.icon == "A")
-        p "yes" if(card.icon == "A")
         BJ_State.check_dealer_aces()
     end
 
