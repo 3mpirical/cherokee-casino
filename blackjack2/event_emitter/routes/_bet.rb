@@ -39,6 +39,7 @@ bj_bet = -> {
             elsif(bet > BJ_Model.get_player_money())
                 puts "I'm sorry, but you aren't quite that rich.."
             else
+                BJ_Model.shuffle_prn()
                 BJ_State.make_bet(bet)
                 BJ_Model.sub_player_money(bet)
 

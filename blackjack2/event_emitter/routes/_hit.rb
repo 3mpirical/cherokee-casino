@@ -22,7 +22,7 @@ bj_hit = -> {
             puts"\n:*:*:*: You Aren't Quite There Yet :*:*:*:"
             return nil
         end
-
+        BJ_Model.shuffle_prn()
         give_player_card()
         player_score = BJ_State.player_total()
 

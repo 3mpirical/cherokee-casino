@@ -42,7 +42,38 @@ class BJ_Model
         }
         @deck_arr.shuffle!()
     end
+
+    ### Refactor this to a utility file ###
+    def self.shuffle_prn
+        if(BJ_Model.deck_length() < 25)
+            puts "\n$:$:$ SHUFFLING CARDS $:$:$\n\n"
+            BJ_Model.reset_deck()
+
+            BJ_State.dealer_cards().each() {|dealer_card|
+                BJ_Model.get_deck().each_with_index() {|deck_card, index|
+                    if(dealer_card.icon == deck_card.icon)
+                        BJ_Model.get_deck().delete_at(index)
+                        break
+                    end
+                }
+            }
+            BJ_State.player_cards().each() {|player_card|
+                BJ_Model.get_deck().each_with_index() {|deck_card, index|
+                    if(player_card.icon == deck_card.icon)
+                        BJ_Model.get_deck().delete_at(index)
+                        break
+                    end
+                }
+            }
+            @deck_arr.shuffle!()
+            sleep(3)
+        end
+    end
     
+    def self.get_deck()
+        return @deck_arr
+    end
+
     def self.remove_card
         return @deck_arr.pop()
     end

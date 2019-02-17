@@ -24,6 +24,7 @@ bj_stand = -> {
         end
 
         while(true) 
+            BJ_Model.shuffle_prn()
             puts "\n:*:*:*: Dealers Turn :*:*:*:\n\n"
             give_dealer_card()
             sleep(2)
