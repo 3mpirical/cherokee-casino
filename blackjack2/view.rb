@@ -75,7 +75,7 @@ class BJ_View
         puts ":*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*::*:*:*:*:*:"
         puts "User           Total: #{BJ_State.player_total()}               $#{BJ_Model.get_player_money()}"
         puts "============================================"
-        puts "hit / stand                       rules stop"
+        puts "Commands: hit / stand                   stop"
     end
 
     def self.make_bet_display
@@ -98,7 +98,7 @@ class BJ_View
         puts ":*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*::*:*:*:*:*:"
         puts "User           score: #{BJ_Model.player_score()}               $#{BJ_Model.get_player_money()}"
         puts "============================================"
-        puts "bet                               rules stop"
+        puts "Commands: bet                           stop"
     end
 
     def self.rules_display
