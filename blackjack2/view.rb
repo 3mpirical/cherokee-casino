@@ -65,7 +65,7 @@ class BJ_View
 
     def self.main_game_display
         puts "============================================"
-        puts "Dealer         Total: #{BJ_State.dealer_total()}             Cards:#{BJ_State.dealer_cards().length == 1? BJ_Model.deck_length() - 1 : BJ_Model.deck_length()}"
+        puts "Dealer         Total: #{BJ_State.dealer_total()}            Cards:#{BJ_State.dealer_cards().length == 1? BJ_Model.deck_length() - 1 : BJ_Model.deck_length()}"
         puts ":*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*::*:*:*:*:*:"
         BJ_View.card_display(BJ_State.dealer_cards())
         puts ""
@@ -81,7 +81,7 @@ class BJ_View
 
     def self.make_bet_display
         puts "============================================"
-        puts "Dealer         score: #{BJ_Model.dealer_score()}"
+        puts "Dealer         score: #{BJ_Model.dealer_score()}            Cards:#{BJ_State.dealer_cards().length == 1? BJ_Model.deck_length() - 1 : BJ_Model.deck_length()}"
         puts ":*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*::*:*:*:*:*:"
         puts ""
         puts "      $$$$$   $                          $  "
