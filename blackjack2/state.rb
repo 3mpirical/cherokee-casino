@@ -67,7 +67,6 @@ class BJ_State
 
     def self.dealer_total()
         score = 0
-        p @dealer_cardsgames
         @dealer_cards.each {|item|
             score += item.value
         }
