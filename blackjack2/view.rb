@@ -55,22 +55,6 @@ class BJ_View
         puts "hit / stand                       rules stop"
     end
 
-    # def self.main_game_display
-    #     puts "============================================"
-    #     puts "Dealer         Total: #{BJ_State.dealer_total()}"
-    #     puts ":*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*::*:*:*:*:*:"
-    #     BJ_View.one_card_down("Q")
-    #     puts ""
-    #     puts "                 $$$ #{BJ_State.get_bet()} $$$"
-    #     puts ""
-    #     BJ_View.two_cards_up("2","K")
-    #     puts ""
-    #     puts ":*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*::*:*:*:*:*:"
-    #     puts "User           Total: #{BJ_State.player_total()}               $#{BJ_Model.get_player_money()}"
-    #     puts "============================================"
-    #     puts "hit / stand                       rules stop"
-    # end
-
     def self.make_bet_display
         puts "============================================"
         puts "Dealer         score: #{BJ_Model.dealer_score()}"
