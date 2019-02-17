@@ -10,6 +10,7 @@ bj_hit = -> {
         player_score = BJ_State.player_total()
 
         if(player_score > 21)
+            BJ_Model.inc_dealer_score()
             BJ_View.main_game_display()
             p "!! ...DEALER WINS... !!"
             BJ_State.reset_bet()
