@@ -5,7 +5,6 @@ bj_hit = -> {
         BJ_State.reset_cards()
         BJ_State.reset_aces()
         BJ_State.reset_totals()
-        BJ_Model.reset_deck()
         sleep(5)
         BJ_View.make_bet_display()
     end
@@ -31,6 +30,7 @@ bj_hit = -> {
             BJ_Model.inc_dealer_score()
             BJ_View.main_game_display()
             p "!! ...DEALER WINS... !!"
+            BJ_Model.remove_card() if (BJ_State.dealer_cards().length == 1)
             reset_game_state()
         else
             BJ_View.main_game_display()

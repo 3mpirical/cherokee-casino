@@ -21,7 +21,6 @@ bj_bet = -> {
             BJ_State.reset_cards()
             BJ_State.reset_aces()
             BJ_State.reset_totals()
-            BJ_Model.reset_deck()
             sleep(5)
             BJ_View.make_bet_display()
         end
