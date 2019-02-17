@@ -6,7 +6,21 @@ bj_hit = -> {
             return nil
         end
 
-        p "here in hit"
+        BJ_State.add_player_card(BJ_Model.remove_card())
+        player_score = BJ_State.player_total()
+
+        if(player_score > 21)
+            BJ_View.main_game_display()
+            p "!! ...DEALER WINS... !!"
+            BJ_State.reset_bet()
+            BJ_State.reset_cards()
+            BJ_Model.reset_deck()
+            sleep(3)
+            BJ_View.make_bet_display()
+        else
+            BJ_View.main_game_display()
+        end
+
     end
 
 
