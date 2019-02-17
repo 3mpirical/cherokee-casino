@@ -7,7 +7,6 @@ bj_stop = -> {
 
             elsif(BJ_State.is_playing?() && BJ_State.get_bet() > 0)
                 BJ_State.reset_bet()
-                BJ_State.stop_game()
                 p BJ_State.is_playing?()
                 puts "Want to play again?"
 
@@ -19,6 +18,10 @@ bj_stop = -> {
                         BJ_Emitter.emit("play")
                         break
                     elsif(input == "no")
+                        BJ_State.stop_game()
+                        BJ_State.reset_bet()
+                        BJ_State.reset_cards()
+                        BJ_Model.reset_deck()
                         puts "\nThanks For Playing!!"
                         sleep(2)
                         BJ_View.menu_display()
