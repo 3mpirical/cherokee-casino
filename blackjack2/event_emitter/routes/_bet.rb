@@ -60,11 +60,13 @@ bj_bet = -> {
 
                     if(dealer_total == 21)
                         BJ_Model.add_player_money(BJ_State.get_bet())
+                        BJ_Model.add_to_history("Tie")
                         puts "\n!! ...PUSH (TIE)... !!\n\n"
                         reset_game_state()
                     else
                         BJ_Model.add_player_money(BJ_State.get_bet() * 2)
                         BJ_Model.inc_player_score()
+                        BJ_Model.add_to_history("player")
                         puts "\n!! ...PLAYER WINS... !!\n\n"
                         reset_game_state()
                     end
