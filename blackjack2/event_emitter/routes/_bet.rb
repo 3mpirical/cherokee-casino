@@ -16,6 +16,16 @@ bj_bet = -> {
             BJ_State.check_dealer_aces()
         end
 
+        def reset_game_state
+            BJ_State.reset_bet()
+            BJ_State.reset_cards()
+            BJ_State.reset_aces()
+            BJ_State.reset_totals()
+            BJ_Model.reset_deck()
+            sleep(5)
+            BJ_View.make_bet_display()
+        end
+
         def handle_bet
             if(!BJ_State.is_playing?() || BJ_State.get_bet() != 0)
                 puts"\n:*:*:*: You Aren't Quite There Yet :*:*:*:"
@@ -36,9 +46,31 @@ bj_bet = -> {
                 give_dealer_card()
                 give_player_card()
                 give_player_card()
+                dealer_total = BJ_State.dealer_total()
+                player_total = BJ_State.player_total()
 
+                if(player_total == 21)
+                    BJ_View.main_game_display()
+                    puts "\n$:$:$:$ !BLACKJACK! $:$:$:$"
+                    sleep(2)
+                    puts "\n:*:*:*: Dealers Turn :*:*:*:\n\n"
+                    sleep(2)
+                    give_dealer_card()
+                    BJ_View.main_game_display()
 
-                BJ_View.main_game_display()
+                    if(dealer_total == 21)
+                        BJ_Model.add_player_money(BJ_State.get_bet())
+                        p "!! ...PUSH (TIE)... !!"
+                        reset_game_state()
+                    else
+                        BJ_Model.add_player_money(BJ_State.get_bet() * 2)
+                        BJ_Model.inc_player_score()
+                        p "!! ...PLAYER WINS... !!"
+                        reset_game_state()
+                    end
+                else
+                    BJ_View.main_game_display()
+                end
             end
         end
 
