@@ -114,4 +114,18 @@ class BJ_Model
         @dealer_score += 1
     end
 
+
+
+    def self.add_to_history(winner)
+        history_object = {
+            winner: winner,
+            p_total: BJ_State.player_total(),
+            p_score: @player_score,
+            d_total: BJ_State.dealer_total(),
+            d_score: @dealer_score
+        }
+        @history_arr.push(history_object)
+        # p @history_arr
+    end
+
 end
