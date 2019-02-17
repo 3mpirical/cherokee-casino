@@ -157,6 +157,50 @@ class BJ_View
         puts "============================================"
     end
 
+    def self.not_quite_there
+        puts"\n:*:*:*: You Aren't Quite There Yet :*:*:*:"
+    end
+
+    def self.dealers_turn()
+        puts "\n:*:*:*: Dealers Turn :*:*:*:"
+    end
+
+    def self.blackjack
+        puts "\n$:$:$:$ !BLACKJACK! $:$:$:$"
+    end
+
+    def self.push_tie
+        puts "\n!! ...PUSH (TIE)... !!"
+    end
+
+    def self.player_wins
+        puts "\n!! ...PLAYER WINS... !!"
+    end
+
+    def self.dealer_wins
+        puts "\n!! ...DEALER WINS... !!"
+    end
+
+    def self.bet_prompt
+        print " (Cash $#{BJ_Model.get_player_money()}): "
+    end
+
+    def self.command_not_recognized
+        puts "\n... Command Not Recognized ..."
+    end
+
+    def self.stop_game_first
+        puts"\n:*:*:*: Stop Game First :*:*:*:"
+    end
+
+    def self.already_playing
+        puts"\n:*:*:*: You Are Already Playing :*:*:*:"
+    end
+
+    def self.not_playing_yet
+        puts"\n:*:*:*: You Aren't Playing Yet :*:*:*:"
+    end
+
 
     def self.get_emit_input()
         puts(" _-_-_-_-_-_-")

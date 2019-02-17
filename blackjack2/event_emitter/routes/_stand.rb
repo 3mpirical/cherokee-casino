@@ -19,14 +19,14 @@ bj_stand = -> {
 
     def handle_stand
         if(!BJ_State.is_playing?() || BJ_State.get_bet() == 0)
-            puts"\n:*:*:*: You Aren't Quite There Yet :*:*:*:"
+            BJ_View.not_quite_there()
             return nil
         end
 
         while(true) 
             BJ_Model.shuffle_prn()
             give_dealer_card()
-            puts "\n:*:*:*: Dealers Turn :*:*:*:"
+            BJ_View.dealers_turn()
             sleep(3)
             BJ_View.main_game_display()
             dealer_total = BJ_State.dealer_total()
@@ -36,19 +36,19 @@ bj_stand = -> {
                 BJ_Model.add_player_money(BJ_State.get_bet() * 2)
                 BJ_Model.inc_player_score()
                 BJ_Model.add_to_history("Player")
-                puts "\n!! ...PLAYER WINS... !!"
+                BJ_View.player_wins()
                 reset_game_state()
                 break
             elsif(dealer_total > player_total)
                 BJ_Model.inc_dealer_score()
                 BJ_Model.add_to_history("Dealer")
-                puts "\n!! ...DEALER WINS... !!"
+                BJ_View.dealer_wins()
                 reset_game_state()
                 break
             elsif(dealer_total == player_total)
                 BJ_Model.add_player_money(BJ_State.get_bet())
                 BJ_Model.add_to_history("Tie")
-                puts "\n!! ...PUSH (TIE)... !!"
+                BJ_View.push_tie()
                 reset_game_state()
                 break
             end

@@ -2,7 +2,7 @@ bj_rules = -> {
     ##### ABSTRACTED FUNCS #####
     def handle_rules
         if(BJ_State.is_playing?())
-            puts "\n... Command Not Recognized ..."
+            BJ_View.command_not_recognized()
             return nil
         end
         

@@ -2,7 +2,7 @@ bj_exit = -> {
     ##### ABSTRACTED FUNCS #####
     def exit_application
         if(BJ_State.is_playing?())
-            puts"\n:*:*:*: Stop Game First :*:*:*:"
+            BJ_View.stop_game_first()
             return nil
         end
         

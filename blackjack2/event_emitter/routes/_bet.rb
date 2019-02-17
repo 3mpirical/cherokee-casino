@@ -27,11 +27,11 @@ bj_bet = -> {
 
         def handle_bet
             if(!BJ_State.is_playing?() || BJ_State.get_bet() != 0)
-                puts"\n:*:*:*: You Aren't Quite There Yet :*:*:*:"
+                BJ_View.not_quite_there()
                 return nil
             end
 
-            print " (Cash $#{BJ_Model.get_player_money()}): "
+            BJ_View.bet_prompt()            
             bet = gets.strip().to_i
 
             if(bet <= 0)
@@ -51,23 +51,25 @@ bj_bet = -> {
 
                 if(player_total == 21)
                     BJ_View.main_game_display()
-                    puts "\n$:$:$:$ !BLACKJACK! $:$:$:$"
+
+                    BJ_View.blackjack()
                     sleep(2)
-                    puts "\n:*:*:*: Dealers Turn :*:*:*:"
+                    BJ_View.dealers_turn()
                     sleep(2)
+
                     give_dealer_card()
                     BJ_View.main_game_display()
 
                     if(dealer_total == 21)
                         BJ_Model.add_player_money(BJ_State.get_bet())
                         BJ_Model.add_to_history("Tie")
-                        puts "\n!! ...PUSH (TIE)... !!"
+                        BJ_View.push_tie()
                         reset_game_state()
                     else
                         BJ_Model.add_player_money(BJ_State.get_bet() * 2)
                         BJ_Model.inc_player_score()
                         BJ_Model.add_to_history("Player")
-                        puts "\n!! ...PLAYER WINS... !!"
+                        BJ_View.player_wins()
                         reset_game_state()
                     end
                 else

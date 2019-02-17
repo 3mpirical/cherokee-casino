@@ -2,7 +2,7 @@ bj_play_game = -> {
     ##### ABSTRACTED FUNCS #####
     def start_game
         if(BJ_State.is_playing?())
-            puts"\n:*:*:*: You Are Already Playing :*:*:*:"
+            BJ_View.already_playing()
             return nil
         end
         BJ_State.play_game()

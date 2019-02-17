@@ -2,7 +2,7 @@ bj_menu = -> {
     ##### ABSTRACTED FUNCS #####
     def menu_handler
         if(BJ_State.is_playing?())
-            puts"\n:*:*:*: Stop Game First :*:*:*:"
+            BJ_View.stop_game_first()
             return nil
         end
         BJ_View.menu_display()

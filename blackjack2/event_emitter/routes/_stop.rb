@@ -2,7 +2,7 @@ bj_stop = -> {
         ##### ABSTRACTED FUNCS #####
         def handle_stop
             if(!BJ_State.is_playing?())
-                puts"\n:*:*:*: You Aren't Playing Yet :*:*:*:"
+                BJ_View.not_playing_yet()
                 return nil
 
             elsif(BJ_State.is_playing?() && BJ_State.get_bet() > 0)

@@ -19,7 +19,7 @@ bj_hit = -> {
 
     def handle_hit
         if(!BJ_State.is_playing?() || BJ_State.get_bet() == 0)
-            puts"\n:*:*:*: You Aren't Quite There Yet :*:*:*:"
+            BJ_View.not_quite_there()
             return nil
         end
         BJ_Model.shuffle_prn()
@@ -30,7 +30,7 @@ bj_hit = -> {
             BJ_Model.inc_dealer_score()
             BJ_Model.add_to_history("Dealer")
             BJ_View.main_game_display()
-            puts "\n!! ...DEALER WINS... !!"
+            BJ_View.dealer_wins()
             BJ_Model.remove_card() if (BJ_State.dealer_cards().length == 1)
             reset_game_state()
         else
