@@ -63,6 +63,11 @@ class BJ_State
         @player_cards.push(card)
     end
 
+    def self.reset_cards
+        @dealer_cards = []
+        @player_cards = []
+    end
+
 
 
     def self.dealer_total()
