@@ -51,7 +51,7 @@ bj_bet = -> {
 
                 if(player_total == 21)
                     BJ_View.main_game_display()
-                    puts "\n$:$:$:$ !BLACKJACK! $:$:$:$"
+                    puts "$:$:$:$ !BLACKJACK! $:$:$:$"
                     sleep(2)
                     puts "\n:*:*:*: Dealers Turn :*:*:*:\n\n"
                     sleep(2)
