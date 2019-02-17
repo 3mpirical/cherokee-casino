@@ -48,7 +48,7 @@ class BJ_Model
     end
 
     def self.deck_length
-        return @deck_arr.lengh        
+        return @deck_arr.length        
     end
     
 
