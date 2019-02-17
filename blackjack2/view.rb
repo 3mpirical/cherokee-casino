@@ -1,6 +1,13 @@
 ##### VIEW #####
 class BJ_View
 
+    def self.staggered_display(array, delay)
+        array.each() {|item|
+            puts item
+            sleep(delay)
+        }
+    end
+
     def self.menu_display
         puts "============================================"
         puts "       ╔╗ ┬  ┌─┐┌─┐┬┌─   ╦┌─┐┌─┐┬┌─\n       ╠╩╗│  ├─┤│  ├┴┐   ║├─┤│  ├┴┐\n       ╚═╝┴─┘┴ ┴└─┘┴ ┴  ╚╝┴ ┴└─┘┴ ┴"
@@ -93,6 +100,42 @@ class BJ_View
         puts "============================================"
         puts "bet                               rules stop"
     end
+
+    def self.rules_display
+        staggered_display([
+            "\n============================================",
+            "                 GAME RULES",
+            "============================================",
+            " FIRST: make a 'bet' to start game",
+            "",
+            " SECOND: decide whether to:",
+            "         'hit' => get another card",
+            "         'stand' => let dealer draw",
+            "",
+            " THIRD: 'stand' when you think your card",
+            "         total is high enough",
+            "",
+            " FOURTH: wait for the dealer to draw its",
+            "         cards, and determine the winner",
+            "",
+            " * If your cards total more than 21, then",
+            "   you lose the game",
+            "",
+            " * If your score goes above 21, but you have",
+            "   ace in play, that ace will count for 1",
+            "   instead of 11",
+            "",
+            " CARD VALUES: ",
+            "",
+            "   Number Cards: their number value",
+            "",
+            "   Face Cards: 10",
+            "",
+            "   Aces: 11 or 1",
+            "============================================"
+        ], 0.1)
+    end
+
 
     def self.get_emit_input()
         puts(" _-_-_-_-_-_-")
