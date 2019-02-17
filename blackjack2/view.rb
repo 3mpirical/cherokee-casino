@@ -63,25 +63,9 @@ class BJ_View
         end
     end
 
-    def self.player_turn_display
-        puts "============================================"
-        puts "Dealer         Total: #{BJ_State.dealer_total()}         Cards:#{BJ_Model.deck_length() > 48? 48 : BJ_Model.deck_length()}"
-        puts ":*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*::*:*:*:*:*:"
-        BJ_View.card_display(BJ_State.dealer_cards().slice(0))
-        puts ""
-        puts "                 $$$ #{BJ_State.get_bet()} $$$"
-        puts ""
-        BJ_View.card_display(BJ_State.player_cards())
-        puts ""
-        puts ":*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*::*:*:*:*:*:"
-        puts "User           Total: #{BJ_State.player_total()}               $#{BJ_Model.get_player_money()}"
-        puts "============================================"
-        puts "hit / stand                       rules stop"
-    end
-
     def self.main_game_display
         puts "============================================"
-        puts "Dealer         Total: #{BJ_State.dealer_total()}         Cards:#{BJ_Model.deck_length() > 48? 48 : BJ_Model.deck_length()}"
+        puts "Dealer         Total: #{BJ_State.dealer_total()}             Cards:#{BJ_State.dealer_cards().length == 1? BJ_Model.deck_length() - 1 : BJ_Model.deck_length()}"
         puts ":*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*::*:*:*:*:*:"
         BJ_View.card_display(BJ_State.dealer_cards())
         puts ""
