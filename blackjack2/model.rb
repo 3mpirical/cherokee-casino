@@ -26,7 +26,7 @@ class BJ_Model
         Card.new("7", 7),
         Card.new("8", 8),
         Card.new("9", 9),
-        Card.new("10", 10),
+        Card.new("⑽", 10),
         Card.new("K", 10),
         Card.new("Q", 10),
         Card.new("J", 10),
