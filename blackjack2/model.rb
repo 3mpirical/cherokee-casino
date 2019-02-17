@@ -115,5 +115,3 @@ class BJ_Model
     end
 
 end
-
-BJ_Model.reset_deck()

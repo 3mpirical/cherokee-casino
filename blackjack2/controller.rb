@@ -1,6 +1,7 @@
 ##### CONTROLLER #####
 class Blackjack_Controller
     def self.init()
+        BJ_Model.reset_deck()
         BJ_View.menu_display()
         while(!BJ_State.exited?())
             BJ_View.get_emit_input()
