@@ -35,7 +35,7 @@ bj_stand = -> {
             if(dealer_total > 21)
                 BJ_Model.add_player_money(BJ_State.get_bet() * 2)
                 BJ_Model.inc_player_score()
-                p "\n!! ...PLAYER WINS... !!\n\n"
+                puts "\n!! ...PLAYER WINS... !!\n\n"
                 reset_game_state()
                 break
             elsif(dealer_total > player_total)
