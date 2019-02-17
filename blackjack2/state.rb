@@ -4,6 +4,10 @@ class BJ_State
     @bet = 0;
     @dealer_cards = []
     @player_cards = []
+    @dealer_aces = 0
+    @player_aces = 0
+    @dealer_total = 0
+    @player_total = 0
 
     def self.exited?
         return @exit
@@ -70,20 +74,61 @@ class BJ_State
 
 
 
-    def self.dealer_total()
-        score = 0
-        @dealer_cards.each {|item|
-            score += item.value
-        }
-        return score
+    def self.dealer_total
+        return @dealer_total
     end
 
-    def self.player_total()
-        score = 0
-        @player_cards.each {|item|
-            score += item.value
-        }
-        return score
+    def self.player_total
+        return @player_total
+    end
+
+    def self.add_dealer_total(value)
+        @dealer_total += value
+    end
+
+    def self.add_player_total(value)
+        @player_total += value
+    end
+
+    def self.reset_totals
+        @player_total = 0
+        @dealer_total = 0
+    end
+
+
+    # def self.handle_aces()
+    #     def find_aces
+    #         total = 0
+    #         @player_cards.each() {|item| 
+    #             total += 1 if(item.icon == "A") 
+    #         }
+    #         return total
+    #     end
+    #     aces = find_aces()
+
+    #     @player if(player_total() > 21 && aces = 1)
+    # end
+
+    def self.inc_dealer_aces
+        @dealer_aces += 1
+    end
+
+    def self.inc_player_aces
+        @player_aces += 1
+    end
+
+    def self.check_dealer_aces
+        if(@dealer_aces > 0 && @dealer_total > 21)
+            @dealer_total -= 10
+            @dealer_aces -= 1
+        end
+    end
+
+    def self.check_player_aces
+        if(@player_aces > 0 && @player_total > 21)
+            @player_total -= 10
+            @player_aces -= 1
+        end
     end
 
 end

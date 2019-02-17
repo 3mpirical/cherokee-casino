@@ -3,9 +3,18 @@ bj_hit = -> {
     def reset_game_state
         BJ_State.reset_bet()
         BJ_State.reset_cards()
+        BJ_State.reset_totals()
         BJ_Model.reset_deck()
         sleep(5)
         BJ_View.make_bet_display()
+    end
+
+    def give_player_card
+        card = BJ_Model.remove_card()
+        BJ_State.add_player_card(card)
+        BJ_State.add_player_total(card.value)
+        BJ_State.inc_player_aces() if(card.icon == "A")
+        BJ_State.check_player_aces()
     end
 
     def handle_hit
@@ -14,7 +23,7 @@ bj_hit = -> {
             return nil
         end
 
-        BJ_State.add_player_card(BJ_Model.remove_card())
+        give_player_card()
         player_score = BJ_State.player_total()
 
         if(player_score > 21)
