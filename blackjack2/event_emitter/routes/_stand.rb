@@ -25,9 +25,9 @@ bj_stand = -> {
 
         while(true) 
             BJ_Model.shuffle_prn()
-            puts "\n:*:*:*: Dealers Turn :*:*:*:\n\n"
             give_dealer_card()
-            sleep(2)
+            puts "\n:*:*:*: Dealers Turn :*:*:*:"
+            sleep(3)
             BJ_View.main_game_display()
             dealer_total = BJ_State.dealer_total()
             player_total = BJ_State.player_total()
@@ -36,19 +36,19 @@ bj_stand = -> {
                 BJ_Model.add_player_money(BJ_State.get_bet() * 2)
                 BJ_Model.inc_player_score()
                 BJ_Model.add_to_history("Player")
-                puts "\n!! ...PLAYER WINS... !!\n\n"
+                puts "\n!! ...PLAYER WINS... !!"
                 reset_game_state()
                 break
             elsif(dealer_total > player_total)
                 BJ_Model.inc_dealer_score()
                 BJ_Model.add_to_history("Dealer")
-                puts "\n!! ...DEALER WINS... !!\n\n"
+                puts "\n!! ...DEALER WINS... !!"
                 reset_game_state()
                 break
             elsif(dealer_total == player_total)
                 BJ_Model.add_player_money(BJ_State.get_bet())
                 BJ_Model.add_to_history("Tie")
-                puts "\n!! ...PUSH (TIE)... !!\n\n"
+                puts "\n!! ...PUSH (TIE)... !!"
                 reset_game_state()
                 break
             end

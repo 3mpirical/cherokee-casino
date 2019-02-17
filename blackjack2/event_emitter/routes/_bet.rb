@@ -51,9 +51,9 @@ bj_bet = -> {
 
                 if(player_total == 21)
                     BJ_View.main_game_display()
-                    puts "\n$:$:$:$ !BLACKJACK! $:$:$:$\n\n"
+                    puts "\n$:$:$:$ !BLACKJACK! $:$:$:$"
                     sleep(2)
-                    puts "\n:*:*:*: Dealers Turn :*:*:*:\n\n"
+                    puts "\n:*:*:*: Dealers Turn :*:*:*:"
                     sleep(2)
                     give_dealer_card()
                     BJ_View.main_game_display()
@@ -61,13 +61,13 @@ bj_bet = -> {
                     if(dealer_total == 21)
                         BJ_Model.add_player_money(BJ_State.get_bet())
                         BJ_Model.add_to_history("Tie")
-                        puts "\n!! ...PUSH (TIE)... !!\n\n"
+                        puts "\n!! ...PUSH (TIE)... !!"
                         reset_game_state()
                     else
                         BJ_Model.add_player_money(BJ_State.get_bet() * 2)
                         BJ_Model.inc_player_score()
                         BJ_Model.add_to_history("Player")
-                        puts "\n!! ...PLAYER WINS... !!\n\n"
+                        puts "\n!! ...PLAYER WINS... !!"
                         reset_game_state()
                     end
                 else
