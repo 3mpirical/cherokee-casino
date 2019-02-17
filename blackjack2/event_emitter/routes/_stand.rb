@@ -1,17 +1,17 @@
 bj_stand = -> {
     ##### ABSTRACTED FUNCS #####
+    def reset_game_state
+        BJ_State.reset_bet()
+        BJ_State.reset_cards()
+        BJ_Model.reset_deck()
+        sleep(5)
+        BJ_View.make_bet_display()
+    end
+
     def handle_stand
         if(!BJ_State.is_playing?() || BJ_State.get_bet() == 0)
             puts"\n:*:*:*: You Aren't Quite There Yet :*:*:*:"
             return nil
-        end
-
-        def reset_game_state
-            BJ_State.reset_bet()
-            BJ_State.reset_cards()
-            BJ_Model.reset_deck()
-            sleep(5)
-            BJ_View.make_bet_display()
         end
 
         while(true) 
