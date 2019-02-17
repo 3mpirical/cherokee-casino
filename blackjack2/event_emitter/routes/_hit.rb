@@ -28,7 +28,7 @@ bj_hit = -> {
 
         if(player_score > 21)
             BJ_Model.inc_dealer_score()
-            BJ_Model.add_to_history("dealer")
+            BJ_Model.add_to_history("Dealer")
             BJ_View.main_game_display()
             puts "\n!! ...DEALER WINS... !!\n\n"
             BJ_Model.remove_card() if (BJ_State.dealer_cards().length == 1)

@@ -66,7 +66,7 @@ bj_bet = -> {
                     else
                         BJ_Model.add_player_money(BJ_State.get_bet() * 2)
                         BJ_Model.inc_player_score()
-                        BJ_Model.add_to_history("player")
+                        BJ_Model.add_to_history("Player")
                         puts "\n!! ...PLAYER WINS... !!\n\n"
                         reset_game_state()
                     end
