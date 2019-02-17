@@ -121,6 +121,7 @@ class BJ_State
         if(@dealer_aces > 0 && @dealer_total > 21)
             @dealer_total -= 10
             @dealer_aces -= 1
+            return true
         end
     end
 
@@ -129,6 +130,11 @@ class BJ_State
             @player_total -= 10
             @player_aces -= 1
         end
+    end
+
+    def self.reset_aces
+        @player_aces = 0
+        @dealer_aces = 0
     end
 
 end
