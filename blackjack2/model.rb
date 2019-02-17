@@ -128,4 +128,8 @@ class BJ_Model
         # p @history_arr
     end
 
+    def self.get_history
+        return @history_arr
+    end
+
 end
