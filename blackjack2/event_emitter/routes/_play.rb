@@ -6,6 +6,8 @@ bj_play_game = -> {
             return nil
         end
         BJ_State.play_game()
+        BJ_View.rules_display()
+        sleep(5)
         BJ_View.make_bet_display()
     end
 
