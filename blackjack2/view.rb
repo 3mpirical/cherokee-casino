@@ -22,14 +22,6 @@ class BJ_View
         puts "============================================"
     end
 
-    def self.one_card_down(c1)
-        puts " ____   ____\n|#{c1}   | ||||||\n| <> | ||()||\n|___#{c1}| ||||||"
-    end
-
-    def self.two_cards_up(c1, c2)
-        puts " ____   ____\n|#{c1}   | |#{c2}   |\n| <> | | <> |\n|___#{c1}| |___#{c2}|"
-    end
-
     def self.card_display(array)
         case(array.length)
         when(1)
