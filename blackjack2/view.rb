@@ -136,6 +136,27 @@ class BJ_View
         ], 0.1)
     end
 
+    def self.history_display
+        staggered_display([
+            "\n============================================",
+            "                 GAME HISTORY",
+            "============================================",
+        ], 0.1)
+        BJ_Model.get_history().each_with_index() {|item, index|
+            staggered_display([
+            "#{index + 1}) Winner: #{item[:winner]}",
+            "-----Player-----",
+            "     Cards Total : #{item[:p_total]}",
+            "     Player Score: #{item[:p_score]}",
+            "-----Dealer------",
+            "     Cards Total : #{item[:d_total]}",
+            "     Dealer Score: #{item[:d_score]}",
+            ""
+                ], 0.1)   
+        }
+        puts "============================================"
+    end
+
 
     def self.get_emit_input()
         puts(" _-_-_-_-_-_-")
