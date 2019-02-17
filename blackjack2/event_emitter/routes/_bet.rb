@@ -51,7 +51,6 @@ bj_bet = -> {
 
                 if(player_total == 21)
                     BJ_View.main_game_display()
-
                     BJ_View.blackjack()
                     sleep(2)
                     BJ_View.dealers_turn()

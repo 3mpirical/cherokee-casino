@@ -26,11 +26,12 @@ bj_stand = -> {
         while(true) 
             BJ_Model.shuffle_prn()
             give_dealer_card()
+            dealer_total = BJ_State.dealer_total()
+            player_total = BJ_State.player_total()
+            
             BJ_View.dealers_turn()
             sleep(3)
             BJ_View.main_game_display()
-            dealer_total = BJ_State.dealer_total()
-            player_total = BJ_State.player_total()
 
             if(dealer_total > 21)
                 BJ_Model.add_player_money(BJ_State.get_bet() * 2)
