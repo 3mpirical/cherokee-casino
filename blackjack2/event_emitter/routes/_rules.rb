@@ -11,4 +11,6 @@ bj_rules = -> {
 
     ##### EVENT LISTENERS #####
     BJ_Emitter.add("rules") { handle_rules() }
+    BJ_Emitter.add("r") { handle_rules() }
+    BJ_Emitter.add("-r") { handle_rules() }
 }.()
