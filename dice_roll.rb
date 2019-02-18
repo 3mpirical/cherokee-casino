@@ -19,7 +19,7 @@ class Dice_Model
         return @name
     end
 end
-mdl = Model.new
+mdl = Dice_Model.new
 
 
 

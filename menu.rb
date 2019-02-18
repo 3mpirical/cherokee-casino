@@ -3,6 +3,7 @@ require("./blackjack2/model")
 require("./blackjack2/view")
 require("./blackjack2/state")
 require("./blackjack2/event_emitter/game_emitter")
+#require("./blackjack2/event_emmitter/utility")
 BJ_Emitter.init_routes("./blackjack2/event_emitter/routes/_exit")
 BJ_Emitter.init_routes("./blackjack2/event_emitter/routes/_menu")
 BJ_Emitter.init_routes("./blackjack2/event_emitter/routes/_play")
@@ -11,9 +12,11 @@ BJ_Emitter.init_routes("./blackjack2/event_emitter/routes/_bet")
 BJ_Emitter.init_routes("./blackjack2/event_emitter/routes/_hit")
 BJ_Emitter.init_routes("./blackjack2/event_emitter/routes/_stand")
 BJ_Emitter.init_routes("./blackjack2/event_emitter/routes/_rules")
+BJ_Emitter.init_routes("./blackjack2/event_emitter/routes/_history")
 BJ_Emitter.init_routes("./blackjack2/event_emitter/routes/_default")
 
 require "pry"
+require "colorize"
 
 class Model  
     attr_accessor(:wallet, :exits) #you can call wallet to later add or subtract values
@@ -26,7 +29,7 @@ class Model
     end
 
     def init_wallet()
-        @wallet = Random.new().rand(60..100)
+        @wallet = Random.new().rand(600..1000)
     end
 
     def mutate_wallet(money)
@@ -37,8 +40,9 @@ class Model
         @current_game = picked_game #whatever game chosen 
     end
 end
+@mdl = Model.new
 
-mdl = Model.new
+
 
 class View
 
@@ -53,20 +57,37 @@ class View
     end
 
     def menu
-        puts "Welcome To The Cherokee Casino"
-        puts "1. Games Menu"
-        puts "2. Settings"
-        puts "Wallet: $#{@mdl.wallet}"
+        puts "_" * 50
+        puts
+        puts " " * 9 + "♤ Welcome To The Cherokee Casino ♧"
+        puts "_" * 50
+        puts
+        puts
+        puts " " * 13.5 + "🂱 Games - Type \"Games\" \n\n"
+        puts " " * 10.5 + "⏣ Settings - Type \"Settings\" \n\n" 
+        puts " " * 18.5 + "Wallet: $#{@mdl.wallet} \n\n"
+        puts
+        puts "_" * 50
     end
 
     def display_games
-        puts "Welcome to The Games Menu"
-        puts "Please Select a Game" 
+        puts "_" * 50
+        puts
+        puts " " * 12 + "🂱 Welcome To Games Menu 🃎"
+        puts "_" * 50
+        puts
+        puts
+        puts " " * 14.5 + "Chance - Type \"Chance\" \n\n"
+        puts " " * 11.5 + "Blackjack - Type \"Blackjack\" \n\n"
+        puts " " * 18.5 + "Wallet: $#{@mdl.wallet} \n\n"
+        puts
+        puts "_" * 50
     end
 
 end
+view = View.new(@mdl)
 
-view = View.new(mdl)
+
 
 class Controller
     def initialize(mdl, view)
@@ -81,16 +102,18 @@ class Controller
         while(@mdl.exits == false)
             print "Selection: "
             input = gets.strip()
+            input.downcase!
 
             case(input)
             when("games")
                 @view.display_games()
                 print "Select game: "
                 input = gets.strip()
-                if input == "Chance".downcase
+                input.downcase!
+                if input == "chance"
                     @mdl.set_game("chance")
                     puts "Starting: #{@mdl.current_game}"
-                elsif input == "BlackJack".downcase
+                elsif input == "blackjack"
                     @mdl.set_game("blackjack")
                     puts "Starting: #{@mdl.current_game}"
                     Blackjack_Controller.init()
@@ -104,12 +127,8 @@ class Controller
             end
         end
     end
-
-
-
-
 end
-ctrl = Controller.new(mdl, view)
+ctrl = Controller.new(@mdl, view)
 
 ### Execute ###
 
