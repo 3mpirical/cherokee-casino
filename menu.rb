@@ -1,3 +1,4 @@
+require("./chance")
 require("./blackjack2/controller")
 require("./blackjack2/model")
 require("./blackjack2/view")
@@ -128,6 +129,8 @@ class Controller
                 if input == "chance"
                     @mdl.set_game("chance")
                     puts "Starting: #{@mdl.current_game}"
+                    @mdl.wallet += Chance.menu()
+                    @view.menu()
                 elsif input == "blackjack"
                     @mdl.set_game("blackjack")
                     puts "Starting: #{@mdl.current_game}"
