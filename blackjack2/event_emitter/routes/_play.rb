@@ -7,8 +7,25 @@ bj_play_game = -> {
         end
         BJ_State.play_game()
         BJ_View.rules_display()
-        sleep(5)
-        BJ_View.make_bet_display()
+        while(true)
+            print("Ready? (yes/no): ")
+            input = gets.strip()
+        
+            if(input == "yes")
+                BJ_Emitter.emit("bet")
+                break
+            elsif(input == "no")
+                BJ_State.stop_game()
+                puts "\nAlright, I'll return you to the main screen"
+                sleep(2)
+                BJ_View.menu_display()
+                break
+            else
+                puts "Please enter yes or no"
+            end
+        end 
+        # sleep(2)
+        # BJ_Emitter.emit("bet")
     end
 
     ##### EVENT LISTENERS #####

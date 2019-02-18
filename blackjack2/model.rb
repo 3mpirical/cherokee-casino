@@ -12,7 +12,6 @@ end
 class BJ_Model
     include Cards
     ##### STATE #####
-    @player_money = 100
     @player_score = 0
     @dealer_score = 0
     @history_arr = []
@@ -34,7 +33,6 @@ class BJ_Model
     ]
 
     ### Getters/Setters/Etc ###
-
     def self.reset_deck
         @deck_arr = []
         @card_types.each() {|item|
@@ -43,7 +41,6 @@ class BJ_Model
         @deck_arr.shuffle!()
     end
 
-    ### Refactor this to a utility file ###
     def self.shuffle_prn
         if(BJ_Model.deck_length() < 25)
             puts "\n$:$:$ SHUFFLING CARDS $:$:$\n\n"

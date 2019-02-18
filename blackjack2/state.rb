@@ -95,19 +95,7 @@ class BJ_State
         @dealer_total = 0
     end
 
-
-    # def self.handle_aces()
-    #     def find_aces
-    #         total = 0
-    #         @player_cards.each() {|item| 
-    #             total += 1 if(item.icon == "A") 
-    #         }
-    #         return total
-    #     end
-    #     aces = find_aces()
-
-    #     @player if(player_total() > 21 && aces = 1)
-    # end
+    
 
     def self.inc_dealer_aces
         @dealer_aces += 1
