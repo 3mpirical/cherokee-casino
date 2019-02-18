@@ -16,13 +16,13 @@ class Util
         BJ_State.check_dealer_aces()
     end
 
-    def self.reset_game_state
+    def self.restart_game
         BJ_State.reset_bet()
         BJ_State.reset_cards()
         BJ_State.reset_aces()
         BJ_State.reset_totals()
         sleep(5)
-        BJ_View.make_bet_display()
+        BJ_Emitter.emit("bet")
     end
     
 end
