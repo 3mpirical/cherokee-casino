@@ -30,9 +30,9 @@ bj_hit = -> {
             BJ_Model.inc_dealer_score()
             BJ_Model.add_to_history("Dealer")
             BJ_Model.remove_card() if (BJ_State.dealer_cards().length == 1)
-            reset_game_state()
             BJ_View.main_game_display()
             BJ_View.dealer_wins()
+            reset_game_state()
         else
             BJ_View.main_game_display()
         end
