@@ -9,96 +9,133 @@ class BJ_View
     end
 
     def self.menu_display
-        puts "============================================"
-        puts "       ╔╗ ┬  ┌─┐┌─┐┬┌─   ╦┌─┐┌─┐┬┌─\n       ╠╩╗│  ├─┤│  ├┴┐   ║├─┤│  ├┴┐\n       ╚═╝┴─┘┴ ┴└─┘┴ ┴  ╚╝┴ ┴└─┘┴ ┴"
-        puts "============================================"
-        puts "menu/help ---> print this menu for reference"
-        puts "h, -h"
-        puts ""
-        puts "play game ---------> start playing blackjack"
-        puts "play, p, -p"
-        puts ""
-        puts "rules -------------------> learn how to play"
-        puts "r, -r"
-        puts ""
-        puts "history -------> see how good you really are"
-        puts "his, -his"
-        puts ""
-        puts "quit/exit -----------> return to main screen"
-        puts " q,-q"
-        puts "============================================"
+        staggered_display([
+            "============================================",
+            "       ╔╗ ┬  ┌─┐┌─┐┬┌─   ╦┌─┐┌─┐┬┌─",
+            "       ╠╩╗│  ├─┤│  ├┴┐   ║├─┤│  ├┴┐",
+            "       ╚═╝┴─┘┴ ┴└─┘┴ ┴  ╚╝┴ ┴└─┘┴ ┴",
+            "============================================",
+            "menu/help ---> print this menu for reference",
+            "h, -h",
+            "",
+            "play game ---------> start playing blackjack",
+            "play, p, -p",
+            "",
+            "rules -------------------> learn how to play",
+            "r, -r",
+            "",
+            "history -------> see how good you really are",
+            "his, -his",
+            "",
+            "quit/exit -----------> return to main screen",
+            " q,-q",
+            "============================================"
+        ], 0)
     end
 
     def self.card_display(array)
         case(array.length)
         when(1)
-            puts " ____   ____\n|#{array[0].icon}   | ||||||\n| <> | ||()||\n|___#{array[0].icon}| ||||||"
+            puts ".------.  .------.  \n|#{array[0].icon}.--. |  ||||||||  \n| :/\\: |  ||:/\\:||  \n| :\\/: |  ||:\\/:||  \n| '--'#{array[0].icon}|  ||||||||  \n`------'  `------'"
         when(2)
-            puts " ____   ____\n|#{array[0].icon}   | |#{array[1].icon}   |\n| <> | | <> |\n|___#{array[0].icon}| |___#{array[1].icon}|"
-        when(3)
-            puts " ____   ____   ____\n|#{array[0].icon}   | |#{array[1].icon}   | |#{array[2].icon}   |\n| <> | | <> | | <> |\n|___#{array[0].icon}| |___#{array[1].icon}| |___#{array[2].icon}|"
-        when(4)
-            puts " ____   ____   ____   ____\n|#{array[0].icon}   | |#{array[1].icon}   | |#{array[2].icon}   | |#{array[3].icon}   |\n| <> | | <> | | <> | | <> |\n|___#{array[0].icon}| |___#{array[1].icon}| |___#{array[2].icon}| |___#{array[3].icon}|"
+            puts ".------.  .------.  \n|#{array[0].icon}.--. |  |#{array[1].icon}.--. |  \n| :/\\: |  | :/\\: |  \n| :\\/: |  | :\\/: |  \n| '--'#{array[0].icon}|  | '--'#{array[1].icon}|  \n`------'  `------'"
+        when(3)   
+            puts ".------.  .------.  .------.  \n|#{array[0].icon}.--. |  |#{array[1].icon}.--. |  |#{array[2].icon}.--. |  \n| :/\\: |  | :/\\: |  | :/\\: |  \n| :\\/: |  | :\\/: |  | :\\/: |  \n| '--'#{array[0].icon}|  | '--'#{array[1].icon}|  | '--'#{array[2].icon}|  \n`------'  `------'  `------'"
+        when(4)    
+            puts ".------.  .------.  .------.  .------.  \n|#{array[0].icon}.--. |  |#{array[1].icon}.--. |  |#{array[2].icon}.--. |  |#{array[3].icon}.--. |  \n| :/\\: |  | :/\\: |  | :/\\: |  | :/\\: |  \n| :\\/: |  | :\\/: |  | :\\/: |  | :\\/: |  \n| '--'#{array[0].icon}|  | '--'#{array[1].icon}|  | '--'#{array[2].icon}|  | '--'#{array[3].icon}|  \n`------'  `------'  `------'  `------'"
         when(5)
-            puts " ____   ____   ____   ____   ____\n|#{array[0].icon}   | |#{array[1].icon}   | |#{array[2].icon}   | |#{array[3].icon}   | |#{array[4].icon}   |\n| <> | | <> | | <> | | <> | | <> | \n|___#{array[0].icon}| |___#{array[1].icon}| |___#{array[2].icon}| |___#{array[3].icon}| |___#{array[4].icon}|"
+            puts".------.  .------.  .------.  .------.  .------.  \n|#{array[0].icon}.--. |  |#{array[1].icon}.--. |  |#{array[2].icon}.--. |  |#{array[3].icon}.--. |  |#{array[4].icon}.--. |  \n| :/\\: |  | :/\\: |  | :/\\: |  | :/\\: |  | :/\\: |  \n| :\\/: |  | :\\/: |  | :\\/: |  | :\\/: |  | :\\/: |  \n| '--'#{array[0].icon}|  | '--'#{array[1].icon}|  | '--'#{array[2].icon}|  | '--'#{array[3].icon}|  | '--'#{array[4].icon}|  \n`------'  `------'  `------'  `------'  `------'"
         when(6)
-            puts " ____   ____   ____   ____   ____   ____\n|#{array[0].icon}   | |#{array[1].icon}   | |#{array[2].icon}   | |#{array[3].icon}   | |#{array[4].icon}   | |#{array[5].icon}   |\n| <> | | <> | | <> | | <> | | <> | | <> |\n|___#{array[0].icon}| |___#{array[1].icon}| |___#{array[2].icon}| |___#{array[3].icon}| |___#{array[4].icon}| |___#{array[5].icon}|"
-        when(7)
+            puts".------.  .------.  .------.  .------.  .------.  .------.  \n|#{array[0].icon}.--. |  |#{array[1].icon}.--. |  |#{array[2].icon}.--. |  |#{array[3].icon}.--. |  |#{array[4].icon}.--. |  |#{array[5].icon}.--. |  \n| :/\\: |  | :/\\: |  | :/\\: |  | :/\\: |  | :/\\: |  | :/\\: |  \n| :\\/: |  | :\\/: |  | :\\/: |  | :\\/: |  | :\\/: |  | :\\/: |  \n| '--'#{array[0].icon}|  | '--'#{array[1].icon}|  | '--'#{array[2].icon}|  | '--'#{array[3].icon}|  | '--'#{array[4].icon}|  | '--'#{array[5].icon}|  \n`------'  `------'  `------'  `------'  `------'  `------'"
+        
+        when(7)    
+            puts".------.  .------.  .------.  .------.  .------.  .------.  \n|#{array[0].icon}.--. |  |#{array[1].icon}.--. |  |#{array[2].icon}.--. |  |#{array[3].icon}.--. |  |#{array[4].icon}.--. |  |#{array[5].icon}.--. |  \n| :/\\: |  | :/\\: |  | :/\\: |  | :/\\: |  | :/\\: |  | :/\\: |  \n| :\\/: |  | :\\/: |  | :\\/: |  | :\\/: |  | :\\/: |  | :\\/: |  \n| '--'#{array[0].icon}|  | '--'#{array[1].icon}|  | '--'#{array[2].icon}|  | '--'#{array[3].icon}|  | '--'#{array[4].icon}|  | '--'#{array[5].icon}|  \n`------'  `------'  `------'  `------'  `------'  `------'"
 
-            puts " ____   ____   ____   ____   ____   ____\n|#{array[0].icon}   | |#{array[1].icon}   | |#{array[2].icon}   | |#{array[3].icon}   | |#{array[4].icon}   | |#{array[5].icon}   |\n| <> | | <> | | <> | | <> | | <> | | <> |\n|___#{array[0].icon}| |___#{array[1].icon}| |___#{array[2].icon}| |___#{array[3].icon}| |___#{array[4].icon}| |___#{array[5].icon}|"
-            puts " ____ \n|#{array[6].icon}   |\n| <> |\n|___#{array[6].icon}|"
+            puts ".------.  \n|#{array[6].icon}.--. |  \n| :/\\: |  \n| :\\/: |  \n| '--'#{array[6].icon}|  \n`------'"
+
         when(8)
-            puts " ____   ____   ____   ____   ____   ____\n|#{array[0].icon}   | |#{array[1].icon}   | |#{array[2].icon}   | |#{array[3].icon}   | |#{array[4].icon}   | |#{array[5].icon}   |\n| <> | | <> | | <> | | <> | | <> | | <> |\n|___#{array[0].icon}| |___#{array[1].icon}| |___#{array[2].icon}| |___#{array[3].icon}| |___#{array[4].icon}| |___#{array[5].icon}|"
-            puts " ____   ____ \n|#{array[6].icon}   | |#{array[7].icon}   |\n| <> | | <> |\n|___#{array[6].icon}| |___#{array[7].icon}|"
+            puts".------.  .------.  .------.  .------.  .------.  .------.  \n|#{array[0].icon}.--. |  |#{array[1].icon}.--. |  |#{array[2].icon}.--. |  |#{array[3].icon}.--. |  |#{array[4].icon}.--. |  |#{array[5].icon}.--. |  \n| :/\\: |  | :/\\: |  | :/\\: |  | :/\\: |  | :/\\: |  | :/\\: |  \n| :\\/: |  | :\\/: |  | :\\/: |  | :\\/: |  | :\\/: |  | :\\/: |  \n| '--'#{array[0].icon}|  | '--'#{array[1].icon}|  | '--'#{array[2].icon}|  | '--'#{array[3].icon}|  | '--'#{array[4].icon}|  | '--'#{array[5].icon}|  \n`------'  `------'  `------'  `------'  `------'  `------'"
+
+            puts ".------.  .------.  \n|#{array[6].icon}.--. |  |#{array[7].icon}.--. |  \n| :/\\: |  | :/\\: |  \n| :\\/: |  | :\\/: |  \n| '--'#{array[6].icon}|  | '--'#{array[7].icon}|  \n`------'  `------'"
+
         when(9)
-            puts " ____   ____   ____   ____   ____   ____\n|#{array[0].icon}   | |#{array[1].icon}   | |#{array[2].icon}   | |#{array[3].icon}   | |#{array[4].icon}   | |#{array[5].icon}   |\n| <> | | <> | | <> | | <> | | <> | | <> |\n|___#{array[0].icon}| |___#{array[1].icon}| |___#{array[2].icon}| |___#{array[3].icon}| |___#{array[4].icon}| |___#{array[5].icon}|"
-            puts " ____   ____   ____ \n|#{array[6].icon}   | |#{array[7].icon}   | |#{array[8].icon}   |\n| <> | | <> | | <> |\n|___#{array[6].icon}| |___#{array[7].icon}| |___#{array[8].icon}|"
+            puts".------.  .------.  .------.  .------.  .------.  .------.  \n|#{array[0].icon}.--. |  |#{array[1].icon}.--. |  |#{array[2].icon}.--. |  |#{array[3].icon}.--. |  |#{array[4].icon}.--. |  |#{array[5].icon}.--. |  \n| :/\\: |  | :/\\: |  | :/\\: |  | :/\\: |  | :/\\: |  | :/\\: |  \n| :\\/: |  | :\\/: |  | :\\/: |  | :\\/: |  | :\\/: |  | :\\/: |  \n| '--'#{array[0].icon}|  | '--'#{array[1].icon}|  | '--'#{array[2].icon}|  | '--'#{array[3].icon}|  | '--'#{array[4].icon}|  | '--'#{array[5].icon}|  \n`------'  `------'  `------'  `------'  `------'  `------'"
+
+            puts ".------.  .------.  .------.  \n|#{array[6].icon}.--. |  |#{array[7].icon}.--. |  |#{array[8].icon}.--. |  \n| :/\\: |  | :/\\: |  | :/\\: |  \n| :\\/: |  | :\\/: |  | :\\/: |  \n| '--'#{array[6].icon}|  | '--'#{array[7].icon}|  | '--'#{array[8].icon}|  \n`------'  `------'  `------'"
+
         when(10)
-            puts " ____   ____   ____   ____   ____   ____\n|#{array[0].icon}   | |#{array[1].icon}   | |#{array[2].icon}   | |#{array[3].icon}   | |#{array[4].icon}   | |#{array[5].icon}   |\n| <> | | <> | | <> | | <> | | <> | | <> |\n|___#{array[0].icon}| |___#{array[1].icon}| |___#{array[2].icon}| |___#{array[3].icon}| |___#{array[4].icon}| |___#{array[5].icon}|"
-            puts " ____   ____   ____   ____\n|#{array[6].icon}   | |#{array[7].icon}   | |#{array[8].icon}   | |#{array[9].icon}   |\n| <> | | <> | | <> | | <> |\n|___#{array[6].icon}| |___#{array[7].icon}| |___#{array[8].icon}| |___#{array[9].icon}|"
+            puts".------.  .------.  .------.  .------.  .------.  .------.  \n|#{array[0].icon}.--. |  |#{array[1].icon}.--. |  |#{array[2].icon}.--. |  |#{array[3].icon}.--. |  |#{array[4].icon}.--. |  |#{array[5].icon}.--. |  \n| :/\\: |  | :/\\: |  | :/\\: |  | :/\\: |  | :/\\: |  | :/\\: |  \n| :\\/: |  | :\\/: |  | :\\/: |  | :\\/: |  | :\\/: |  | :\\/: |  \n| '--'#{array[0].icon}|  | '--'#{array[1].icon}|  | '--'#{array[2].icon}|  | '--'#{array[3].icon}|  | '--'#{array[4].icon}|  | '--'#{array[5].icon}|  \n`------'  `------'  `------'  `------'  `------'  `------'"
+
+            puts ".------.  .------.  .------.  .------.  \n|#{array[6].icon}.--. |  |#{array[7].icon}.--. |  |#{array[8].icon}.--. |  |#{array[9].icon}.--. |  \n| :/\\: |  | :/\\: |  | :/\\: |  | :/\\: |  \n| :\\/: |  | :\\/: |  | :\\/: |  | :\\/: |  \n| '--'#{array[6].icon}|  | '--'#{array[7].icon}|  | '--'#{array[8].icon}|  | '--'#{array[9].icon}|  \n`------'  `------'  `------'  `------'"
+
         when(11)
-            puts " ____   ____   ____   ____   ____   ____\n|#{array[0].icon}   | |#{array[1].icon}   | |#{array[2].icon}   | |#{array[3].icon}   | |#{array[4].icon}   | |#{array[5].icon}   |\n| <> | | <> | | <> | | <> | | <> | | <> |\n|___#{array[0].icon}| |___#{array[1].icon}| |___#{array[2].icon}| |___#{array[3].icon}| |___#{array[4].icon}| |___#{array[5].icon}|"
-            puts " ____   ____   ____   ____   ____\n|#{array[6].icon}   | |#{array[7].icon}   | |#{array[8].icon}   | |#{array[9].icon}   | |#{array[10].icon}   |\n| <> | | <> | | <> | | <> | | <> | \n|___#{array[6].icon}| |___#{array[7].icon}| |___#{array[8].icon}| |___#{array[9].icon}| |___#{array[10].icon}|"
+            puts".------.  .------.  .------.  .------.  .------.  .------.  \n|#{array[0].icon}.--. |  |#{array[1].icon}.--. |  |#{array[2].icon}.--. |  |#{array[3].icon}.--. |  |#{array[4].icon}.--. |  |#{array[5].icon}.--. |  \n| :/\\: |  | :/\\: |  | :/\\: |  | :/\\: |  | :/\\: |  | :/\\: |  \n| :\\/: |  | :\\/: |  | :\\/: |  | :\\/: |  | :\\/: |  | :\\/: |  \n| '--'#{array[0].icon}|  | '--'#{array[1].icon}|  | '--'#{array[2].icon}|  | '--'#{array[3].icon}|  | '--'#{array[4].icon}|  | '--'#{array[5].icon}|  \n`------'  `------'  `------'  `------'  `------'  `------'"
+
+            puts".------.  .------.  .------.  .------.  .------.  \n|#{array[6].icon}.--. |  |#{array[7].icon}.--. |  |#{array[8].icon}.--. |  |#{array[9].icon}.--. |  |#{array[10].icon}.--. |  \n| :/\\: |  | :/\\: |  | :/\\: |  | :/\\: |  | :/\\: |  \n| :\\/: |  | :\\/: |  | :\\/: |  | :\\/: |  | :\\/: |  \n| '--'#{array[6].icon}|  | '--'#{array[7].icon}|  | '--'#{array[8].icon}|  | '--'#{array[9].icon}|  | '--'#{array[10].icon}|  \n`------'  `------'  `------'  `------'  `------'"
+
+        
+            # puts " ____   ____\n|#{array[0].icon}   | |#{array[1].icon}   |\n| <> | | <> |\n|___#{array[0].icon}| |___#{array[1].icon}|"
+        
+            # puts " ____   ____   ____\n|#{array[0].icon}   | |#{array[1].icon}   | |#{array[2].icon}   |\n| <> | | <> | | <> |\n|___#{array[0].icon}| |___#{array[1].icon}| |___#{array[2].icon}|"
+        
+            # puts " ____   ____   ____   ____\n|#{array[0].icon}   | |#{array[1].icon}   | |#{array[2].icon}   | |#{array[3].icon}   |\n| <> | | <> | | <> | | <> |\n|___#{array[0].icon}| |___#{array[1].icon}| |___#{array[2].icon}| |___#{array[3].icon}|"
+        
+            # puts " ____   ____   ____   ____   ____\n|#{array[0].icon}   | |#{array[1].icon}   | |#{array[2].icon}   | |#{array[3].icon}   | |#{array[4].icon}   |\n| <> | | <> | | <> | | <> | | <> | \n|___#{array[0].icon}| |___#{array[1].icon}| |___#{array[2].icon}| |___#{array[3].icon}| |___#{array[4].icon}|"
+        
+            # puts " ____   ____   ____   ____   ____   ____\n|#{array[0].icon}   | |#{array[1].icon}   | |#{array[2].icon}   | |#{array[3].icon}   | |#{array[4].icon}   | |#{array[5].icon}   |\n| <> | | <> | | <> | | <> | | <> | | <> |\n|___#{array[0].icon}| |___#{array[1].icon}| |___#{array[2].icon}| |___#{array[3].icon}| |___#{array[4].icon}| |___#{array[5].icon}|"
+        
+
+            # puts " ____   ____   ____   ____   ____   ____\n|#{array[0].icon}   | |#{array[1].icon}   | |#{array[2].icon}   | |#{array[3].icon}   | |#{array[4].icon}   | |#{array[5].icon}   |\n| <> | | <> | | <> | | <> | | <> | | <> |\n|___#{array[0].icon}| |___#{array[1].icon}| |___#{array[2].icon}| |___#{array[3].icon}| |___#{array[4].icon}| |___#{array[5].icon}|"
+            # puts " ____ \n|#{array[6].icon}   |\n| <> |\n|___#{array[6].icon}|"
+        
+            # puts " ____   ____   ____   ____   ____   ____\n|#{array[0].icon}   | |#{array[1].icon}   | |#{array[2].icon}   | |#{array[3].icon}   | |#{array[4].icon}   | |#{array[5].icon}   |\n| <> | | <> | | <> | | <> | | <> | | <> |\n|___#{array[0].icon}| |___#{array[1].icon}| |___#{array[2].icon}| |___#{array[3].icon}| |___#{array[4].icon}| |___#{array[5].icon}|"
+            # puts " ____   ____ \n|#{array[6].icon}   | |#{array[7].icon}   |\n| <> | | <> |\n|___#{array[6].icon}| |___#{array[7].icon}|"
+        
+            # puts " ____   ____   ____   ____   ____   ____\n|#{array[0].icon}   | |#{array[1].icon}   | |#{array[2].icon}   | |#{array[3].icon}   | |#{array[4].icon}   | |#{array[5].icon}   |\n| <> | | <> | | <> | | <> | | <> | | <> |\n|___#{array[0].icon}| |___#{array[1].icon}| |___#{array[2].icon}| |___#{array[3].icon}| |___#{array[4].icon}| |___#{array[5].icon}|"
+            # puts " ____   ____   ____ \n|#{array[6].icon}   | |#{array[7].icon}   | |#{array[8].icon}   |\n| <> | | <> | | <> |\n|___#{array[6].icon}| |___#{array[7].icon}| |___#{array[8].icon}|"
+        
+            # puts " ____   ____   ____   ____   ____   ____\n|#{array[0].icon}   | |#{array[1].icon}   | |#{array[2].icon}   | |#{array[3].icon}   | |#{array[4].icon}   | |#{array[5].icon}   |\n| <> | | <> | | <> | | <> | | <> | | <> |\n|___#{array[0].icon}| |___#{array[1].icon}| |___#{array[2].icon}| |___#{array[3].icon}| |___#{array[4].icon}| |___#{array[5].icon}|"
+            # puts " ____   ____   ____   ____\n|#{array[6].icon}   | |#{array[7].icon}   | |#{array[8].icon}   | |#{array[9].icon}   |\n| <> | | <> | | <> | | <> |\n|___#{array[6].icon}| |___#{array[7].icon}| |___#{array[8].icon}| |___#{array[9].icon}|"
+        
+            # puts " ____   ____   ____   ____   ____   ____\n|#{array[0].icon}   | |#{array[1].icon}   | |#{array[2].icon}   | |#{array[3].icon}   | |#{array[4].icon}   | |#{array[5].icon}   |\n| <> | | <> | | <> | | <> | | <> | | <> |\n|___#{array[0].icon}| |___#{array[1].icon}| |___#{array[2].icon}| |___#{array[3].icon}| |___#{array[4].icon}| |___#{array[5].icon}|"
+            # puts " ____   ____   ____   ____   ____\n|#{array[6].icon}   | |#{array[7].icon}   | |#{array[8].icon}   | |#{array[9].icon}   | |#{array[10].icon}   |\n| <> | | <> | | <> | | <> | | <> | \n|___#{array[6].icon}| |___#{array[7].icon}| |___#{array[8].icon}| |___#{array[9].icon}| |___#{array[10].icon}|"
         end
     end
-
+  
     def self.main_game_display
-        puts "\n============================================"
-        puts "Dealer         Total: #{BJ_State.dealer_total()}            Cards:#{BJ_State.dealer_cards().length == 1? BJ_Model.deck_length() - 1 : BJ_Model.deck_length()}"
-        puts ":*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*::*:*:*:*:*:"
+        puts "\n________________________________________________"
+        puts "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-"
+        puts " Dealer         Total: #{BJ_State.dealer_total()}           Cards:#{BJ_State.dealer_cards().length == 1? BJ_Model.deck_length() - 1 : BJ_Model.deck_length()}"
+        puts "================================================"
+        # puts "_____________________________________________"
         BJ_View.card_display(BJ_State.dealer_cards())
         puts ""
         puts "                 $$$ #{BJ_State.get_bet()} $$$"
         puts ""
         BJ_View.card_display(BJ_State.player_cards())
         puts ""
-        puts ":*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*::*:*:*:*:*:"
-        puts "User           Total: #{BJ_State.player_total()}               $#{BJ_Model.get_player_money()}"
-        puts "============================================"
-        puts "Commands: hit / stand                   stop"
-    end
+        puts "________________________________________________"
+        puts " Player         Total: #{BJ_State.player_total()}              $#{BJ_Model.get_player_money()}"
+        puts "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-"
+        puts "|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|"
+        puts "-_-_Commands: hit / stand                  stop"
+    end      #"_-_BlackJack: "
 
     def self.make_bet_display
-        puts "\n============================================"
+        puts "\n________________________________________________"
+        puts "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-"
         puts "Dealer         score: #{BJ_Model.dealer_score()}            Cards:#{BJ_State.dealer_cards().length == 1? BJ_Model.deck_length() - 1 : BJ_Model.deck_length()}"
-        puts ":*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*::*:*:*:*:*:"
+        puts "================================================"
         puts ""
-        puts "      $$$$$   $                          $  "
-        puts "   $  $$___$  $   $$$    $$$$   $$$$        "
-        puts "      $$      $  $   $  $      $_____$      "
-        puts " $    $$      $   $$$ $  $$$$   $____       "
+        puts "________________________________________________"
+        puts "      ___  __   ___  _________   ___  __________\n     / _ \\/ /  / _ |/ ___/ __/  / _ )/ __/_  __/\n    / ___/ /__/ __ / /__/ _/   / _  / _/  / /\n   /_/  /____/_/ |_\\___/___/  /____/___/ /_/"  
+        puts "________________________________________________"
         puts ""
-        puts "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-"
-        puts ""
-        puts "    $    $$$$$                $       $     "
-        puts " $       $$___$     $$$$    $$$$$           "
-        puts "         $$$$$     $_____$    $         $   "
-        puts "      $  $$___$     $____     $    $        "
-        puts ""
-        puts ":*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*::*:*:*:*:*:"
+        puts "________________________________________________"
         puts "User           score: #{BJ_Model.player_score()}               $#{BJ_Model.get_player_money()}"
-        puts "============================================"
-        puts "Commands: bet                           stop"
+        puts "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-"
+        puts "|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|"
+        puts "Enter your bet below                        stop"
     end
 
     def self.rules_display
@@ -118,6 +155,8 @@ class BJ_View
             " FOURTH: wait for the dealer to draw its",
             "         cards, and determine the winner",
             "",
+            " FIFTH:  enter \"stop\" to leave game",
+            "",
             " * If your cards total more than 21, then",
             "   you lose the game",
             "",
@@ -133,7 +172,7 @@ class BJ_View
             "",
             "   Aces: 11 or 1",
             "============================================"
-        ], 0.1)
+        ], 0)
     end
 
     def self.history_display
@@ -181,10 +220,6 @@ class BJ_View
         puts "\n!! ...DEALER WINS... !!"
     end
 
-    def self.bet_prompt
-        print " (Cash $#{BJ_Model.get_player_money()}): "
-    end
-
     def self.command_not_recognized
         puts "\n... Command Not Recognized ..."
     end
@@ -201,9 +236,11 @@ class BJ_View
         puts"\n:*:*:*: You Aren't Playing Yet :*:*:*:"
     end
 
+    def self.bet_prompt
+        print "(Cash $#{BJ_Model.get_player_money()}): "
+    end
 
     def self.get_emit_input()
-        puts(" _-_-_-_-_-_-")
         print("_-_BlackJack: ")
         input = gets.strip();
         input.downcase!()
