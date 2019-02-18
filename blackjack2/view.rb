@@ -205,6 +205,8 @@ class BJ_View
     def self.get_emit_input()
         puts(" _-_-_-_-_-_-")
         print("_-_BlackJack: ")
-        BJ_Emitter.emit(gets.strip())
+        input = gets.strip();
+        input.downcase!()
+        BJ_Emitter.emit(input)
     end
 end
