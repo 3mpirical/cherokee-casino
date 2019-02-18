@@ -6,13 +6,14 @@ bj_stand = -> {
             return nil
         end
 
+        BJ_View.dealers_turn()
+
         while(true) 
             BJ_Model.shuffle_prn()
             Util.give_dealer_card()
             dealer_total = BJ_State.dealer_total()
             player_total = BJ_State.player_total()
 
-            # BJ_View.dealers_turn()
             sleep(3)
             BJ_View.dealer_turn_display()
 

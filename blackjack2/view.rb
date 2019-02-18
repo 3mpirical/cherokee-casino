@@ -10,27 +10,29 @@ class BJ_View
 
     def self.menu_display
         staggered_display([
-            "============================================",
-            "       ╔╗ ┬  ┌─┐┌─┐┬┌─   ╦┌─┐┌─┐┬┌─",
-            "       ╠╩╗│  ├─┤│  ├┴┐   ║├─┤│  ├┴┐",
-            "       ╚═╝┴─┘┴ ┴└─┘┴ ┴  ╚╝┴ ┴└─┘┴ ┴",
-            "============================================",
-            "menu/help ---> print this menu for reference",
+            "\n__________________________________________________________",
+            "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-",
+            "               ╔╗ ┬  ┌─┐┌─┐┬┌─   ╦┌─┐┌─┐┬┌─",
+            "               ╠╩╗│  ├─┤│  ├┴┐   ║├─┤│  ├┴┐",
+            "               ╚═╝┴─┘┴ ┴└─┘┴ ┴  ╚╝┴ ┴└─┘┴ ┴",
+            "__________________________________________________________",
+            "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-",
+            "menu/help ------------------> print this menu for reference",
             "h, -h",
             "",
-            "play game ---------> start playing blackjack",
+            "play game -----------------------> start playing blackjack",
             "play, p, -p",
             "",
-            "rules -------------------> learn how to play",
+            "rules ---------------------------------> learn how to play",
             "r, -r",
             "",
-            "history -------> see how good you really are",
+            "history ---------------------> see how good you really are",
             "his, -his",
             "",
-            "quit/exit -----------> return to main screen",
+            "quit/exit -------------------------> return to main screen",
             " q,-q",
-            "============================================"
-        ], 0)
+            "__________________________________________________________",
+        ], 0.1)
     end
 
     def self.card_display(array)
@@ -89,7 +91,7 @@ class BJ_View
         puts " Player                Total: #{BJ_State.player_total()}                      $#{BJ_Model.get_player_money()}"
         puts "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-"
         puts "|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|"
-        puts "-_-_Commands: hit / stand                  stop"
+        puts "-_-_Commands: hit / stand                            stop"
     end
 
     def self.dealer_turn_display
@@ -106,7 +108,7 @@ class BJ_View
         puts " Player                Total: #{BJ_State.player_total()}                      $#{BJ_Model.get_player_money()}"
         puts "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-"
         puts "|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|"
-        puts "-_-_Commands: hit / stand                  stop"
+        puts "-_-_Commands: hit / stand                            stop"
     end
 
     def self.make_bet_display
@@ -125,89 +127,117 @@ class BJ_View
         puts "Player                 Score: #{BJ_Model.player_score()}                      $#{BJ_Model.get_player_money()}"
         puts "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-"
         puts "|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|"
-        puts "Enter your bet below                        stop"
+        puts "Enter your bet below                                 stop"
     end
 
     def self.rules_display
         staggered_display([
-            "\n============================================",
-            "                 GAME RULES",
-            "============================================",
+            "\n__________________________________________________________",
+            "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-",
+            "              ╔═╗┌─┐┌┬┐┌─┐  ╦═╗┬ ┬┬  ┌─┐┌─┐",
+            "              ║ ╦├─┤│││├┤   ╠╦╝│ ││  ├┤ └─┐",
+            "              ╚═╝┴ ┴┴ ┴└─┘  ╩╚═└─┘┴─┘└─┘└─┘",
+            "__________________________________________________________",
+            "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-",
             " FIRST: make a 'bet' to start game",
             "",
             " SECOND: decide whether to:",
             "         'hit' => get another card",
             "         'stand' => let dealer draw",
             "",
-            " THIRD: 'stand' when you think your card",
-            "         total is high enough",
+            " THIRD: 'stand' when you think your card total is high enough",
             "",
-            " FOURTH: wait for the dealer to draw its",
-            "         cards, and determine the winner",
+            " FOURTH: wait for the dealer to draw and determine the winner",
             "",
             " FIFTH:  enter \"stop\" to leave game",
             "",
-            " * If your cards total more than 21, then",
-            "   you lose the game",
+            " * If your cards total more than 21, then you lose the game",
             "",
-            " * If your score goes above 21, but you have",
-            "   ace in play, that ace will count for 1",
-            "   instead of 11",
+            " * If your score goes above 21, but you have ace in play,",
+            "    that ace will count for 1 instead of 11",
             "",
-            " CARD VALUES: ",
+            " CARD VALUES: Number Cards: their number value",
             "",
-            "   Number Cards: their number value",
+            "                Face Cards: 10",
             "",
-            "   Face Cards: 10",
-            "",
-            "   Aces: 11 or 1",
-            "============================================"
-        ], 0)
+            "                      Aces: 11 or 1",
+            "__________________________________________________________",
+        ], 0.1)
     end
 
     def self.history_display
         staggered_display([
-            "\n============================================",
-            "                 GAME HISTORY",
-            "============================================",
+            "\n__________________________________________________________",
+            "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-",
+            "                   ╦ ╦┬┌─┐┌┬┐┌─┐┬─┐┬ ┬",
+            "                   ╠═╣│└─┐ │ │ │├┬┘└┬┘",
+            "                   ╩ ╩┴└─┘ ┴ └─┘┴└─ ┴ ",
+            "__________________________________________________________",
+            "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-"
         ], 0.1)
         BJ_Model.get_history().each_with_index() {|item, index|
             staggered_display([
             "#{index + 1}) Winner: #{item[:winner]}",
-            "-----Player-----",
-            "     Cards Total : #{item[:p_total]}",
-            "     Player Score: #{item[:p_score]}",
-            "-----Dealer------",
-            "     Cards Total : #{item[:d_total]}",
-            "     Dealer Score: #{item[:d_score]}",
+            "                  _________Player_________",
+            "                    Cards Total : #{item[:p_total]}",
+            "                    Player Score: #{item[:p_score]}",
+            "                  _________Dealer_________",
+            "                    Cards Total : #{item[:d_total]}",
+            "                    Dealer Score: #{item[:d_score]}",
             ""
                 ], 0.1)   
         }
-        puts "============================================"
+        puts"\n__________________________________________________________"
     end
 
     def self.not_quite_there
-        puts"\n:*:*:*: You Aren't Quite There Yet :*:*:*:"
+        puts"\n:*:*:*::*:* You Aren't Quite There Yet :*:*:*:*:*:"
     end
 
     def self.dealers_turn()
-        puts "\n:*:*:*: Dealers Turn :*:*:*:"
+        puts "\n:*:*:*::*:*:*::*:* Dealers Turn :*:*:*::*:*:*::*:*"
     end
 
     def self.blackjack
-        puts "\n$:$:$:$ !BLACKJACK! $:$:$:$"
+        staggered_display([
+            "               ___  __   ___  _______ __  ",
+            "              / _ )/ /  / _ |/ ___/ //_/  ",
+            "             / _  / /__/ __ / /__/ ,<     ",
+            "            /____/____/_/_|_\\___/_/|_|    ",
+            "              __ / / _ |/ ___/ //_/       ",
+            "             / // / __ / /__/ ,<          ",
+            "             \\___/_/ |_\\___/_/|_|         ",
+            "",
+        ], 0.3)
     end
 
     def self.push_tie
-        puts "\n!! ...PUSH (TIE)... !!"
+        staggered_display([
+            "                  ______________",
+            "                 /_  __/  _/ __/",
+            "                  / / _/ // _/  ",
+            "                 /_/ /___/___/  ",
+            "",
+        ], 0.3)
     end
 
     def self.player_wins
-        puts "\n!! ...PLAYER WINS... !!"
+        staggered_display([
+            "      ___  __                    _      ___        ",
+            "     / _ \\/ /__ ___ _____ ____  | | /| / (_)__  ___",
+            "    / ___/ / _ `/ // / -_) __/  | |/ |/ / / _ \\(_-<",
+            "   /_/  /_/\\_,_/\\_, /\\__/_/     |__/|__/_/_//_/___/",
+            "               /___/                               ",
+        ], 0.3)
     end
 
     def self.dealer_wins
-        puts "\n!! ...DEALER WINS... !!"
+        staggered_display([
+            "      ___           __          _      ___        ",
+            "     / _ \\___ ___ _/ /__ ____  | | /| / (_)__  ___",
+            "    / // / -_) _ `/ / -_) __/  | |/ |/ / / _ \\(_-<",
+            "   /____/\\__/\\_,_/_/\\__/_/     |__/|__/_/_//_/___/",
+        ], 0.3)
     end
 
     def self.command_not_recognized
@@ -215,15 +245,15 @@ class BJ_View
     end
 
     def self.stop_game_first
-        puts"\n:*:*:*: Stop Game First :*:*:*:"
+        puts"\n:*:*:*::*:*:*::*: Stop Game First :*:*:*::*::*:*:*:"
     end
-
+    
     def self.already_playing
-        puts"\n:*:*:*: You Are Already Playing :*:*:*:"
+        puts"\n:*:*:*::*:*:* You Are Already Playing :*:*:*:*:*:*:"
     end
-
+    
     def self.not_playing_yet
-        puts"\n:*:*:*: You Aren't Playing Yet :*:*:*:"
+        puts"\n:*:*:*::*:*:* You Aren't Playing Yet :*:*:*:*:*:*:"
     end
 
     def self.bet_prompt
