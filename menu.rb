@@ -135,6 +135,7 @@ class Controller
                     @mdl.set_game("blackjack")
                     puts "Starting: #{@mdl.current_game}"
                     Blackjack_Controller.init()
+                    @view.menu()
                 elsif input == "menu"
                     @view.menu()
                 else
