@@ -72,33 +72,6 @@ class BJ_View
             puts".------.  .------.  .------.  .------.  .------.  .------.  \n|#{array[0].icon}.--. |  |#{array[1].icon}.--. |  |#{array[2].icon}.--. |  |#{array[3].icon}.--. |  |#{array[4].icon}.--. |  |#{array[5].icon}.--. |  \n| :/\\: |  | :/\\: |  | :/\\: |  | :/\\: |  | :/\\: |  | :/\\: |  \n| :\\/: |  | :\\/: |  | :\\/: |  | :\\/: |  | :\\/: |  | :\\/: |  \n| '--'#{array[0].icon}|  | '--'#{array[1].icon}|  | '--'#{array[2].icon}|  | '--'#{array[3].icon}|  | '--'#{array[4].icon}|  | '--'#{array[5].icon}|  \n`------'  `------'  `------'  `------'  `------'  `------'"
 
             puts".------.  .------.  .------.  .------.  .------.  \n|#{array[6].icon}.--. |  |#{array[7].icon}.--. |  |#{array[8].icon}.--. |  |#{array[9].icon}.--. |  |#{array[10].icon}.--. |  \n| :/\\: |  | :/\\: |  | :/\\: |  | :/\\: |  | :/\\: |  \n| :\\/: |  | :\\/: |  | :\\/: |  | :\\/: |  | :\\/: |  \n| '--'#{array[6].icon}|  | '--'#{array[7].icon}|  | '--'#{array[8].icon}|  | '--'#{array[9].icon}|  | '--'#{array[10].icon}|  \n`------'  `------'  `------'  `------'  `------'"
-
-        
-            # puts " ____   ____\n|#{array[0].icon}   | |#{array[1].icon}   |\n| <> | | <> |\n|___#{array[0].icon}| |___#{array[1].icon}|"
-        
-            # puts " ____   ____   ____\n|#{array[0].icon}   | |#{array[1].icon}   | |#{array[2].icon}   |\n| <> | | <> | | <> |\n|___#{array[0].icon}| |___#{array[1].icon}| |___#{array[2].icon}|"
-        
-            # puts " ____   ____   ____   ____\n|#{array[0].icon}   | |#{array[1].icon}   | |#{array[2].icon}   | |#{array[3].icon}   |\n| <> | | <> | | <> | | <> |\n|___#{array[0].icon}| |___#{array[1].icon}| |___#{array[2].icon}| |___#{array[3].icon}|"
-        
-            # puts " ____   ____   ____   ____   ____\n|#{array[0].icon}   | |#{array[1].icon}   | |#{array[2].icon}   | |#{array[3].icon}   | |#{array[4].icon}   |\n| <> | | <> | | <> | | <> | | <> | \n|___#{array[0].icon}| |___#{array[1].icon}| |___#{array[2].icon}| |___#{array[3].icon}| |___#{array[4].icon}|"
-        
-            # puts " ____   ____   ____   ____   ____   ____\n|#{array[0].icon}   | |#{array[1].icon}   | |#{array[2].icon}   | |#{array[3].icon}   | |#{array[4].icon}   | |#{array[5].icon}   |\n| <> | | <> | | <> | | <> | | <> | | <> |\n|___#{array[0].icon}| |___#{array[1].icon}| |___#{array[2].icon}| |___#{array[3].icon}| |___#{array[4].icon}| |___#{array[5].icon}|"
-        
-
-            # puts " ____   ____   ____   ____   ____   ____\n|#{array[0].icon}   | |#{array[1].icon}   | |#{array[2].icon}   | |#{array[3].icon}   | |#{array[4].icon}   | |#{array[5].icon}   |\n| <> | | <> | | <> | | <> | | <> | | <> |\n|___#{array[0].icon}| |___#{array[1].icon}| |___#{array[2].icon}| |___#{array[3].icon}| |___#{array[4].icon}| |___#{array[5].icon}|"
-            # puts " ____ \n|#{array[6].icon}   |\n| <> |\n|___#{array[6].icon}|"
-        
-            # puts " ____   ____   ____   ____   ____   ____\n|#{array[0].icon}   | |#{array[1].icon}   | |#{array[2].icon}   | |#{array[3].icon}   | |#{array[4].icon}   | |#{array[5].icon}   |\n| <> | | <> | | <> | | <> | | <> | | <> |\n|___#{array[0].icon}| |___#{array[1].icon}| |___#{array[2].icon}| |___#{array[3].icon}| |___#{array[4].icon}| |___#{array[5].icon}|"
-            # puts " ____   ____ \n|#{array[6].icon}   | |#{array[7].icon}   |\n| <> | | <> |\n|___#{array[6].icon}| |___#{array[7].icon}|"
-        
-            # puts " ____   ____   ____   ____   ____   ____\n|#{array[0].icon}   | |#{array[1].icon}   | |#{array[2].icon}   | |#{array[3].icon}   | |#{array[4].icon}   | |#{array[5].icon}   |\n| <> | | <> | | <> | | <> | | <> | | <> |\n|___#{array[0].icon}| |___#{array[1].icon}| |___#{array[2].icon}| |___#{array[3].icon}| |___#{array[4].icon}| |___#{array[5].icon}|"
-            # puts " ____   ____   ____ \n|#{array[6].icon}   | |#{array[7].icon}   | |#{array[8].icon}   |\n| <> | | <> | | <> |\n|___#{array[6].icon}| |___#{array[7].icon}| |___#{array[8].icon}|"
-        
-            # puts " ____   ____   ____   ____   ____   ____\n|#{array[0].icon}   | |#{array[1].icon}   | |#{array[2].icon}   | |#{array[3].icon}   | |#{array[4].icon}   | |#{array[5].icon}   |\n| <> | | <> | | <> | | <> | | <> | | <> |\n|___#{array[0].icon}| |___#{array[1].icon}| |___#{array[2].icon}| |___#{array[3].icon}| |___#{array[4].icon}| |___#{array[5].icon}|"
-            # puts " ____   ____   ____   ____\n|#{array[6].icon}   | |#{array[7].icon}   | |#{array[8].icon}   | |#{array[9].icon}   |\n| <> | | <> | | <> | | <> |\n|___#{array[6].icon}| |___#{array[7].icon}| |___#{array[8].icon}| |___#{array[9].icon}|"
-        
-            # puts " ____   ____   ____   ____   ____   ____\n|#{array[0].icon}   | |#{array[1].icon}   | |#{array[2].icon}   | |#{array[3].icon}   | |#{array[4].icon}   | |#{array[5].icon}   |\n| <> | | <> | | <> | | <> | | <> | | <> |\n|___#{array[0].icon}| |___#{array[1].icon}| |___#{array[2].icon}| |___#{array[3].icon}| |___#{array[4].icon}| |___#{array[5].icon}|"
-            # puts " ____   ____   ____   ____   ____\n|#{array[6].icon}   | |#{array[7].icon}   | |#{array[8].icon}   | |#{array[9].icon}   | |#{array[10].icon}   |\n| <> | | <> | | <> | | <> | | <> | \n|___#{array[6].icon}| |___#{array[7].icon}| |___#{array[8].icon}| |___#{array[9].icon}| |___#{array[10].icon}|"
         end
     end
   
@@ -107,7 +80,6 @@ class BJ_View
         puts "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-"
         puts " Dealer         Total: #{BJ_State.dealer_total()}           Cards:#{BJ_State.dealer_cards().length == 1? BJ_Model.deck_length() - 1 : BJ_Model.deck_length()}"
         puts "================================================"
-        # puts "_____________________________________________"
         BJ_View.card_display(BJ_State.dealer_cards())
         puts ""
         puts "                 $$$ #{BJ_State.get_bet()} $$$"
@@ -119,7 +91,7 @@ class BJ_View
         puts "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-"
         puts "|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|"
         puts "-_-_Commands: hit / stand                  stop"
-    end      #"_-_BlackJack: "
+    end
 
     def self.make_bet_display
         puts "\n________________________________________________"
