@@ -8,7 +8,6 @@ bj_stop = -> {
             elsif(BJ_State.is_playing?() && BJ_State.get_bet() > 0)
                 # game is stopped here because the the 'play' route won't
                 # fire if the game is still running
-                BJ_State.stop_game()
                 BJ_State.reset_bet()
                 BJ_State.reset_cards()
                 BJ_State.reset_totals()
@@ -20,9 +19,10 @@ bj_stop = -> {
                 input = gets.strip()
                 
                     if(input == "yes")
-                        BJ_Emitter.emit("play")
+                        BJ_Emitter.emit("bet")
                         break
                     elsif(input == "no")
+                        BJ_State.stop_game()
                         puts "\nThanks For Playing!!"
                         sleep(2)
                         BJ_View.menu_display()

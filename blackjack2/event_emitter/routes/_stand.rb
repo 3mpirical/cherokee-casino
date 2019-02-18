@@ -21,19 +21,19 @@ bj_stand = -> {
                 BJ_Model.inc_player_score()
                 BJ_Model.add_to_history("Player")
                 BJ_View.player_wins()
-                Util.reset_game_state()
+                Util.restart_game()
                 break
             elsif(dealer_total > player_total)
                 BJ_Model.inc_dealer_score()
                 BJ_Model.add_to_history("Dealer")
                 BJ_View.dealer_wins()
-                Util.reset_game_state()
+                Util.restart_game()
                 break
             elsif(dealer_total == player_total)
                 BJ_Model.add_player_money(BJ_State.get_bet())
                 BJ_Model.add_to_history("Tie")
                 BJ_View.push_tie()
-                Util.reset_game_state()
+                Util.restart_game()
                 break
             end
         end

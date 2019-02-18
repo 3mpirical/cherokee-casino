@@ -7,8 +7,8 @@ bj_play_game = -> {
         end
         BJ_State.play_game()
         BJ_View.rules_display()
-        sleep(5)
-        BJ_View.make_bet_display()
+        sleep(2)
+        BJ_Emitter.emit("bet")  
     end
 
     ##### EVENT LISTENERS #####

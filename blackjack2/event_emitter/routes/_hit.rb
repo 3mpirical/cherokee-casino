@@ -15,7 +15,7 @@ bj_hit = -> {
             BJ_Model.remove_card() if (BJ_State.dealer_cards().length == 1)
             BJ_View.main_game_display()
             BJ_View.dealer_wins()
-            Util.reset_game_state()
+            Util.restart_game()
         else
             BJ_View.main_game_display()
         end
