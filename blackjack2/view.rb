@@ -75,38 +75,56 @@ class BJ_View
         end
     end
   
-    def self.main_game_display
-        puts "\n________________________________________________"
-        puts "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-"
-        puts " Dealer         Total: #{BJ_State.dealer_total()}           Cards:#{BJ_State.dealer_cards().length == 1? BJ_Model.deck_length() - 1 : BJ_Model.deck_length()}"
-        puts "================================================"
+    def self.hit_display
+        puts "\n__________________________________________________________"
+        puts "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-"
+        puts " Dealer                Total: #{BJ_State.dealer_total()}                  Cards:#{BJ_State.dealer_cards().length == 1? BJ_Model.deck_length() - 1 : BJ_Model.deck_length()}"
+        puts "=========================================================="
         BJ_View.card_display(BJ_State.dealer_cards())
         puts ""
-        puts "                 $$$ #{BJ_State.get_bet()} $$$"
+        puts "                       $$$ #{BJ_State.get_bet()} $$$"
         puts ""
         BJ_View.card_display(BJ_State.player_cards())
+        puts "__________________________________________________________"
+        puts " Player                Total: #{BJ_State.player_total()}                      $#{BJ_Model.get_player_money()}"
+        puts "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-"
+        puts "|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|"
+        puts "-_-_Commands: hit / stand                  stop"
+    end
+
+    def self.dealer_turn_display
+        puts "\n__________________________________________________________"
+        puts "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-"
+        puts " Dealer                Total: #{BJ_State.dealer_total()}                  Cards:#{BJ_State.dealer_cards().length == 1? BJ_Model.deck_length() - 1 : BJ_Model.deck_length()}"
+        puts "=========================================================="
+        BJ_View.card_display(BJ_State.dealer_cards())
         puts ""
-        puts "________________________________________________"
-        puts " Player         Total: #{BJ_State.player_total()}              $#{BJ_Model.get_player_money()}"
-        puts "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-"
-        puts "|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|"
+        puts "    DEALERS TURN      $$$ #{BJ_State.get_bet()} $$$      DEALERS TURN "
+        puts ""
+        BJ_View.card_display(BJ_State.player_cards())
+        puts "__________________________________________________________"
+        puts " Player                Total: #{BJ_State.player_total()}                      $#{BJ_Model.get_player_money()}"
+        puts "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-"
+        puts "|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|"
         puts "-_-_Commands: hit / stand                  stop"
     end
 
     def self.make_bet_display
-        puts "\n________________________________________________"
-        puts "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-"
-        puts "Dealer         score: #{BJ_Model.dealer_score()}            Cards:#{BJ_State.dealer_cards().length == 1? BJ_Model.deck_length() - 1 : BJ_Model.deck_length()}"
-        puts "================================================"
+        puts "\n__________________________________________________________"
+        puts "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-"
+        puts "Dealer                 Score: #{BJ_Model.dealer_score()}                  Cards:#{BJ_State.dealer_cards().length == 1? BJ_Model.deck_length() - 1 : BJ_Model.deck_length()}"
+        puts "=========================================================="
         puts ""
-        puts "________________________________________________"
-        puts "      ___  __   ___  _________   ___  __________\n     / _ \\/ /  / _ |/ ___/ __/  / _ )/ __/_  __/\n    / ___/ /__/ __ / /__/ _/   / _  / _/  / /\n   /_/  /____/_/ |_\\___/___/  /____/___/ /_/"  
-        puts "________________________________________________"
+        puts "               - - - - - - -- -- -- --- --- --------------"
+        puts "__________________________________________________________"
+        puts "       ___  __   ___  _________   ___  __________\n       / _ \\/ /  / _ |/ ___/ __/  / _ )/ __/_  __/\n      / ___/ /__/ __ / /__/ _/   / _  / _/  / /\n     /_/  /____/_/ |_\\___/___/  /____/___/ /_/"  
+        puts "__________________________________________________________"
         puts ""
-        puts "________________________________________________"
-        puts "User           score: #{BJ_Model.player_score()}               $#{BJ_Model.get_player_money()}"
-        puts "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-"
-        puts "|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|"
+        puts "-------------- --- --- -- -- -- - - - - - -"
+        puts "__________________________________________________________"
+        puts "Player                 Score: #{BJ_Model.player_score()}                      $#{BJ_Model.get_player_money()}"
+        puts "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-"
+        puts "|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|"
         puts "Enter your bet below                        stop"
     end
 
