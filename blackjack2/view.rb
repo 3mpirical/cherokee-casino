@@ -22,7 +22,7 @@ class BJ_View
         puts "r, -r"
         puts ""
         puts "history -------> see how good you really are"
-        puts "h, -h"
+        puts "his, -his"
         puts ""
         puts "quit/exit -----------> return to main screen"
         puts " q,-q"

@@ -34,5 +34,6 @@ bj_exit = -> {
     ##### EVENT LISTENERS #####
     BJ_Emitter.add("quit") {|event|  exit_application() }
     BJ_Emitter.add("q") {|event|  exit_application() }
+    BJ_Emitter.add("-q") {|event|  exit_application() }
     BJ_Emitter.add("exit") {|event|  exit_application() }
 }.()
