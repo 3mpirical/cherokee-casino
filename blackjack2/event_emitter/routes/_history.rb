@@ -5,7 +5,7 @@ bj_history = -> {
             BJ_View.stop_game_first()
             return nil
         end
-        BJ_View.handle_history()
+        BJ_View.history_display()
     end
 
     ##### EVENT LISTENERS #####
