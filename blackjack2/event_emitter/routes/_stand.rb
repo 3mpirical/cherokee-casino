@@ -12,9 +12,9 @@ bj_stand = -> {
             dealer_total = BJ_State.dealer_total()
             player_total = BJ_State.player_total()
 
-            BJ_View.dealers_turn()
+            # BJ_View.dealers_turn()
             sleep(3)
-            BJ_View.main_game_display()
+            BJ_View.dealer_turn_display()
 
             if(dealer_total > 21)
                 BJ_Model.add_player_money(BJ_State.get_bet() * 2)

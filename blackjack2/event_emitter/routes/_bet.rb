@@ -36,14 +36,14 @@ bj_bet = -> {
 
                     if(player_total == 21)
                         ### handle blackjack ###
-                        BJ_View.main_game_display()
+                        BJ_View.dealer_turn_display()
                         BJ_View.blackjack()
                         sleep(2)
                         BJ_View.dealers_turn()
                         sleep(2)
 
                         Util.give_dealer_card()
-                        BJ_View.main_game_display()
+                        BJ_View.dealer_turn_display()
 
                         if(dealer_total == 21)
                             BJ_Model.add_player_money(BJ_State.get_bet())
@@ -61,7 +61,7 @@ bj_bet = -> {
                         end
                     else
                         ### if no blackjack, move to next screen ###
-                        BJ_View.main_game_display()
+                        BJ_View.hit_display()
                         break
                     end
                 end
