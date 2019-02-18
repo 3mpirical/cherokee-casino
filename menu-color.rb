@@ -17,10 +17,10 @@ BJ_Emitter.init_routes("./blackjack2/event_emitter/routes/_default")
 
 require "pry"
 require "colorize"
-require "./menu-color"
-require "./menu"
+# require "./menu"
+# require "./menu-color"
 
-class Model  
+class Color_Model  
     attr_accessor(:wallet, :exits) #you can call wallet to later add or subtract values
     attr_reader(:current_game)
 
@@ -42,10 +42,11 @@ class Model
         @current_game = picked_game #whatever game chosen 
     end
 end
-Mdl = Model.new
+Color_Mdl = Color_Model.new
 
 
-class View
+
+class Color_View
 
     def initialize(mdl)
         @mdl = mdl
@@ -60,13 +61,13 @@ class View
     def menu
         puts "_" * 50
         puts
-        puts " " * 9 + "♤ Welcome To The Cherokee Casino ♧"
+        puts " " * 9 + "♤ Welcome To The Cherokee Casino ♧".colorize(:cyan)
         puts "_" * 50
         puts
         puts
-        puts " " * 13.5 + "🂱 Games - Type \"Games\" \n\n"
-        puts " " * 10.5 + "⏣ Settings - Type \"Settings\" \n\n"
-        puts " " * 18.5 + "Wallet: $#{@mdl.wallet} \n\n"
+        puts " " * 13.5 + "🂱 Games - Type \"Games\" \n\n".colorize(:green)
+        puts " " * 10.5 + "⏣ Settings - Type \"Settings\" \n\n".colorize(:green)
+        puts " " * 18.5 + "Wallet: $#{@mdl.wallet} \n\n".colorize(:green)
         puts
         puts "_" * 50
     end
@@ -74,33 +75,31 @@ class View
     def display_games
         puts "_" * 50
         puts
-        puts " " * 12 + "🂱 Welcome To Games Menu 🃎"
+        puts " " * 12 + "🂱 Welcome To Games Menu 🃎".colorize(:cyan)
         puts "_" * 50
         puts
         puts
-        puts " " * 14.5 + "Chance - Type \"Chance\" \n\n"
-        puts " " * 11.5 + "Blackjack - Type \"Blackjack\" \n\n"
-        puts " " * 9 + "Return to the Menu - Type \"Menu\" \n\n"
-        puts " " * 18.5 + "Wallet: $#{@mdl.wallet} \n\n"
+        puts " " * 14.5 + "Chance - Type \"Chance\" \n\n".colorize(:green)
+        puts " " * 11.5 + "Blackjack - Type \"Blackjack\" \n\n".colorize(:green)
+        puts " " * 9 + "Return to the Menu - Type \"Menu\" \n\n".colorize(:green)
+        puts " " * 18.5 + "Wallet: $#{@mdl.wallet} \n\n".colorize(:green)
         puts "_" * 50
     end
 
     def display_settings
         puts "_" * 50
         puts
-        puts " " * 12 + "⏣ Welcome To Settings Menu ⏣"
+        puts " " * 12 + "⏣ Welcome To Settings Menu ⏣".colorize(:cyan)
         puts "_" * 50
         puts
         puts
-        puts " " * 7 + "$ Change Starting Bank - Type \"Bank\" \n\n"
-        puts " " * 7 + "⎃ Change Display Mode - Type \"Color\""
-        puts " " * 4 + "**Typing Color Will Result in a Bank Reset**".colorize(:red)
-        puts
-        puts " " * 7.5 + "♤ Return to the Menu - Type \"Menu\" \n\n"
+        puts " " * 7 + "$ Change Starting Bank - Type \"Bank\" \n\n".colorize(:green)
+        puts " " * 7 + "⎃ Change Display Mode - Type \"Color\" \n\n".colorize(:green)
+        puts " " * 7.5 + "♤ Return to the Menu - Type \"Menu\" \n\n".colorize(:green)
         puts "_" * 50
     end
 end
-view = View.new(Mdl)
+color_view = Color_View.new(Color_Mdl)
 
 
 
@@ -146,9 +145,7 @@ class Controller
                     print "Enter Starting Bank: "
                     input = gets.to_i()
                     @mdl.wallet = input
-                    @view.menu()
-                elsif input == "color"
-                    MenuColor.initialize_game()
+                # elsif input == "color"
                 elsif input == "menu"
                 else
                     puts "Invalid Selection"
@@ -161,8 +158,8 @@ class Controller
         end
     end
 end
-ctrl = Controller.new(Mdl, view)
+MenuColor = Controller.new(Color_Mdl, color_view)
 
 ### Execute ###
 
-ctrl.initialize_game()
+# ctrl.initialize_game()
