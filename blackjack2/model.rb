@@ -85,15 +85,15 @@ class BJ_Model
 
 
     def self.get_player_money
-        return @player_money
+        return Mdl.wallet
     end
 
     def self.sub_player_money(val)
-        @player_money -= val
+        Mdl.wallet -= val
     end
 
     def self.add_player_money(val)
-        @player_money += val
+        Mdl.wallet += val
     end
 
     
